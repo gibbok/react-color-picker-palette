@@ -1,0 +1,47 @@
+.colorPickerPalette {
+    position: relative;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.colorPickerPalette--previewColorCanvas {
+    width: 285px;
+    height: 150px;
+}
+
+.colorPickerPalette--previewColorHovered, .colorPickerPalette--previewColorSelected{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+}
+
+/*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2016 GibboK */
+
+.colorPickerPalette--previewColorHovered {
+    top: 95px;
+    left: 295px;
+}
+
+.colorPickerPalette--previewColorSelected {
+    top: 95px;
+    left: 350px;
+}
+
+.colorPickerPalette--previewColorHex, .colorPickerPalette--previewColorRgb {
+    position: absolute;
+    width: 109px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #DDD;
+    color:#585858;
+    text-align: center;
+}
+
+.colorPickerPalette--previewColorRgb {
+    top: 47px;
+    left: 295px;
+}
+
+.colorPickerPalette--previewColorHex {
+    top: 0;
+    left: 295px;
+}
