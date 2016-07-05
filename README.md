@@ -22,7 +22,7 @@ ColorPickerPalette is a React reusable color picker palette written in ES6.
 
 ### Customization
 You can customize the defaults layout for the entire componenet using CSS.
-The default style is visible at ![ColorPickerPalette.css](ColorPickerPalette.css)
+The default style is visible at [ColorPickerPalette.css](ColorPickerPalette.css)
 
 ## Examples
 ![ColorPickerPalette for React](examples/colorpicker-react-example.png)
