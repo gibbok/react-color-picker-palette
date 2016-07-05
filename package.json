@@ -1,6 +1,6 @@
 {
     "name": "react-color-picker-palette",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "ColorPickerPalette is a React reusable color picker palette written in ES6.",
     "main": "colorPickerPalette.js",
     "keywords": [
