@@ -2,7 +2,7 @@
     "name": "react-color-picker-palette",
     "version": "1.0.2",
     "description": "ColorPickerPalette is a React reusable color picker palette written in ES6.",
-    "main": "colorPickerPalette.js",
+    "main": "ColorPickerPalette.jsx",
     "keywords": [
         "javascript",
         "react",
@@ -17,7 +17,7 @@
     "scripts": {
         "start": "webpack-dev-server --hot"
     },
-    "devDependencies": {
+    "dependencies": {
         "babel": "^6.5.2",
         "babel-cli": "^6.10.1",
         "babel-core": "^6.9.1",
