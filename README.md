@@ -1,7 +1,7 @@
 # ColorPickerPalette
 ColorPickerPalette is a React reusable color picker palette written in ES6.
 
-![ColorPickerPalette for React](examples/colorpicker-react-example.png)
+![ColorPickerPalette for React](https://raw.githubusercontent.com/gibbok/react-color-picker-palette/master/examples/colorpicker-react-example.png)
 
 ### Features
 - Color picking from the palette.
