@@ -1,6 +1,6 @@
 {
     "name": "react-color-picker-palette",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "ColorPickerPalette is a React reusable color picker palette written in ES6.",
     "main": "ColorPickerPalette.jsx",
     "keywords": [
@@ -12,6 +12,10 @@
         "color picker",
         "color picker palette"
     ],
+    "repository": { 
+        "type" : "git",
+        "url" : "https://github.com/gibbok/react-color-picker-palette.git"
+    },
     "author": "GibboK",
     "license": "MIT",
     "scripts": {
