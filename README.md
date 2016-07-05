@@ -13,7 +13,8 @@ ColorPickerPalette is a React reusable color picker palette written in ES6.
 ---
 
 ### Great! So how do I use it?
-- Add a reference ColorPickerPalette.js in your React application: `import ColorPickerPalette from './react-colorpicker-palette/ColorPickerPalette.jsx'`.
+- Add this dependecy in your package.json: `"dependencies": { "react-color-picker-palette": "^1.0.4" }`.
+- Add a reference ColorPickerPalette.js in your React application: `import ColorPickerPalette from '.node_modules/react-color-picker-palette/ColorPickerPalette.jsx`.
 - Initiate the color picker in your `render()` function: `<ColorPickerPalette id='yourPicker'/>`.
 
 ### How do I run the examples?
