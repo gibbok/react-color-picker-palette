@@ -1,15 +1,9 @@
 ﻿const gulp = require('gulp');
-const connect = require('gulp-connect');
-const open = require('open');
 const jscs = require('gulp-jscs');
 const jshint = require('gulp-jshint');
-const stylish = require('gulp-jscs-stylish');
-const gulpJsdoc2md = require('gulp-jsdoc-to-markdown')
-const rename = require('gulp-rename');
-const concat = require('gulp-concat');
 const gutil = require('gulp-util');
-const uglify = require('gulp-uglify');
-const fs = require('fs');
+const stylish = require('gulp-jscs-stylish');
+const open = require('open');
 
 /**
  * Open examples in the browser.
@@ -33,4 +27,4 @@ gulp.task('checkcode', function () {
 /**
  * Default action.
  */
-gulp.task('default', ['compress'], function () { });
+gulp.task('default', ['examples'], function () { });
