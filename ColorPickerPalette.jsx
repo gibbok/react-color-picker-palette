@@ -61,7 +61,8 @@ class ColorPickerPalette extends React.Component {
      * Convert RGB components to HEX value.
      */
     rgbToHex(r, g, b) {
-        return '#' + this.componentToHex(r) + this.componentToHex(g) + this.componentToHex(b);
+        //
+        return `#${this.componentToHex(r)}${this.componentToHex(g)}${this.componentToHex(b)}`;
     }
 
     /**
