@@ -61,7 +61,6 @@ class ColorPickerPalette extends React.Component {
      * Convert RGB components to HEX value.
      */
     rgbToHex(r, g, b) {
-        //
         return `#${this.componentToHex(r)}${this.componentToHex(g)}${this.componentToHex(b)}`;
     }
 
@@ -93,7 +92,7 @@ class ColorPickerPalette extends React.Component {
      * Get color from mouse coordinates.
      * Palette event handler for mouse over.
      */
-    handleMouseOver(event) {
+    handlePaletteMouseOver(event) {
         let canvasRect = this.drawingContext.canvas.getBoundingClientRect(),
             imageData;
         this.colorEventX = event.pageX - canvasRect.left;
@@ -112,13 +111,39 @@ class ColorPickerPalette extends React.Component {
     }
 
     /**
-     * Store hovered color as selected color.
-     * Palette event handler for mouse click.
+     * Select all ranges of text for the selected input field.
+     * Inputs event handler for mouse click.
      */
-    handleMouseClick() {
+    handlePaletteMouseClick() {
         this.setState({
             selectedColor: this.state.hoveredColor
         });
+    }
+
+    /**
+     * Get dimensions for palette.
+     */
+    handleInputMouseClick(event) {
+        let target = event.currentTarget,
+            value = target.value;
+        target.setSelectionRange(0, value.length);
+        this.saveToClipboard(value);
+    }
+
+    /**
+     * Save selected color value to clipboard.
+     */
+    saveToClipboard(value) {
+        try {
+            var successful = document.execCommand('copy');
+            if (successful) {
+                console.log(value);
+            } else {
+                console.warn('Unable to copy.');
+            }
+        } catch (err) {
+            console.warn('Unsupported Browser.');
+        }
     }
 
     /**
@@ -151,7 +176,7 @@ class ColorPickerPalette extends React.Component {
      */
     render() {
         let id = this.props.id,
-        	previewColorCanvasId = `preview-color-canvas-${id}`,
+            previewColorCanvasId = `preview-color-canvas-${id}`,
             previewColorHexId = `preview-color-hex--${id}`,
             previewColorHoveredId = `preview-color-rgb-${id}`,
             previewColorSelectedId = `preview-color-hovered-${id}`,
@@ -168,22 +193,24 @@ class ColorPickerPalette extends React.Component {
                 <canvas
                     ref='previewColorCanvas'
                     id={previewColorCanvasId}
-                    onMouseMove={this.handleMouseOver.bind(this) }
-                    onClick={this.handleMouseClick.bind(this) }
                     className="colorPickerPalette--previewColorCanvas"
+                    onMouseMove={this.handlePaletteMouseOver.bind(this) }
+                    onClick={this.handlePaletteMouseClick.bind(this) }
                     >
                 </canvas>
                 <div
                     ref='previewColorHovered'
                     id={previewColorHoveredId}
                     style={previewColorHoveredStyles}
-                    className="colorPickerPalette--previewColorHovered">
+                    className="colorPickerPalette--previewColorHovered"
+                    >
                 </div>
                 <div
                     ref='previewColorSelected'
                     id={previewColorSelectedId}
                     style={previewColorSelectedStyles}
-                    className="colorPickerPalette--previewColorSelected">
+                    className="colorPickerPalette--previewColorSelected"
+                    >
                 </div>
                 <input type="text"
                     ref='previewColorHex'
@@ -191,6 +218,7 @@ class ColorPickerPalette extends React.Component {
                     className="colorPickerPalette--previewColorHex"
                     value={hexTxt}
                     readOnly={true}
+                    onClick={this.handleInputMouseClick.bind(this) }
                     />
 
                 <input type="text"
@@ -198,6 +226,7 @@ class ColorPickerPalette extends React.Component {
                     className="colorPickerPalette--previewColorRgb"
                     value={rgbTxt}
                     readOnly={true}
+                    onClick={this.handleInputMouseClick.bind(this) }
                     />
             </div>
         );
