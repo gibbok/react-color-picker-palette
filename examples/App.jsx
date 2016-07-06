@@ -5,7 +5,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <ColorPickerPalette id='picker01'/>
+                <ColorPickerPalette id='colorPicker1'/>
             </div>
         );
     }

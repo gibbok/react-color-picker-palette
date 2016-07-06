@@ -6,6 +6,7 @@ ColorPickerPalette is a React reusable color picker palette written in ES6.
 ### Features
 - Color picking from the palette.
 - Live color preview.
+- Color marker.
 - Color result in RGB and HEX format.
 - Remember last color selected.
 - Automatic save color to clipboard.

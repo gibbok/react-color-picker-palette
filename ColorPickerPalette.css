@@ -1,6 +1,26 @@
+/*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2016 GibboK */
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .colorPickerPalette {
     position: relative;
-    font-family: Arial,Helvetica,sans-serif;
+}
+
+.colorPickerPalette--previewColorMarker {
+    position: absolute;
+    top:-3px;
+    left:-3px;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #fff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 0 1px rgba(0,0,0,0.75);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.75);
 }
 
 .colorPickerPalette--previewColorCanvas {
@@ -8,13 +28,11 @@
     height: 150px;
 }
 
-.colorPickerPalette--previewColorHovered, .colorPickerPalette--previewColorSelected{
+.colorPickerPalette--previewColorHovered,.colorPickerPalette--previewColorSelected {
     position: absolute;
     width: 55px;
     height: 55px;
 }
-
-/*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2016 GibboK */
 
 .colorPickerPalette--previewColorHovered {
     top: 95px;
@@ -26,13 +44,14 @@
     left: 350px;
 }
 
-.colorPickerPalette--previewColorHex, .colorPickerPalette--previewColorRgb {
+.colorPickerPalette--previewColorHex,.colorPickerPalette--previewColorRgb {
     position: absolute;
     width: 109px;
     height: 30px;
-    font-size: 12px;
     border: 1px solid #DDD;
-    color:#585858;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    color: #585858;
     text-align: center;
 }
 
