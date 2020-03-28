@@ -1,38 +1,101 @@
 {
   "name": "react-color-picker-palette",
   "version": "2.0.0",
-  "description": "ColorPickerPalette is a React reusable color picker palette",
-  "main": "index.js",
+  "description": "",
+  "main": "./src/index.ts",
+  "keywords": [
+    "javascript",
+    "react",
+    "color",
+    "picker",
+    "palette",
+    "color picker",
+    "color picker palette"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./lib ./coverage",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch --pretty",
+    "build": "tsc -p ./tsconfig.prod.json",
+    "build:watch": "npm run build -- --watch --pretty",
+    "build:prod": "npm run clean && npm run lint && npm run test && npm run build && cp -r src/assets lib/",
+    "lint": "tsc & eslint './src/**/*.{js,ts,tsx}' & prettier './src/**/*.{js,ts,tsx}' --check",
+    "lint:fix": "tsc & eslint './src/**/*.{js,ts,tsx}' --fix & prettier './src/**/*.{js,ts,tsx}' --write",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "TZ=UTC jest",
+    "test:no-coverage": "TZ=UTC jest --coverage=false",
+    "test:watch": "TZ=UTC jest --coverage=false --watch",
+    "test:visual": "loki test --port 9001",
+    "test:approve-visual": "loki approve"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gibbok/react-color-picker-palette.git"
+    "url": "https://github.com/gibbok/react-color-picker-palette.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "GibboK",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gibbok/react-color-picker-palette/issues"
   },
   "homepage": "https://github.com/gibbok/react-color-picker-palette#readme",
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "typescript": "^3.8.3"
+    "react-dom": "^16.12.0",
+    "react": "^16.12.0",
+    "typescript": "^3.7.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@storybook/addon-actions": "^5.3.17",
-    "@storybook/addon-links": "^5.3.17",
-    "@storybook/addons": "^5.3.17",
-    "@storybook/react": "^5.3.17",
-    "@types/react": "^16.9.27",
-    "@types/react-dom": "^16.9.5",
-    "babel-loader": "^8.1.0",
-    "webpack": "^4.42.1",
+    "@babel/core": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-info": "^5.3.13",
+    "@storybook/addon-knobs": "^5.3.13",
+    "@storybook/addon-links": "^5.3.13",
+    "@storybook/addon-storyshots": "^5.3.13",
+    "@storybook/addons": "^5.3.13",
+    "@storybook/react": "^5.3.13",
+    "@storybook/theming": "^5.3.13",
+    "@types/classnames": "^2.2.9",
+    "@types/enzyme": "^3.10.5",
+    "@types/events": "^3.0.0",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "csstype": "^2.6.9",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "loki": "^0.20.1",
+    "prettier": "^1.19.1",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "rimraf": "^3.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
+    "ts-jest": "^25.2.0",
+    "ts-loader": "^6.2.1",
+    "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      }
+    }
   }
 }
