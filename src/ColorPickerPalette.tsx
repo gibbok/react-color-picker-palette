@@ -10,7 +10,13 @@ const componentToHex = (color: number) => {
 const rgbToHex = (r: number, g: number, b: number) =>
   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
 
-const ColorPickerPalette = () => {
+type Colors = Readonly<{ rgb: [number, number, number]; hex: string }>;
+
+type ColorPickerPaletteProps = Readonly<{
+  onSelectColor: (x: Colors) => void;
+}>;
+
+const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   const [colorSelected, setColorSelected] = React.useState<string | undefined>();
   const canvasRef = React.createRef<HTMLCanvasElement>();
 
@@ -57,6 +63,7 @@ const ColorPickerPalette = () => {
         const b = imageData.data[2];
         const result = rgbToHex(r, g, b);
         setColorSelected(result);
+        onSelectColor({ rgb: [r, g, b], hex: result });
         return result;
       }
     }
