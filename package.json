@@ -1,47 +1,19 @@
 {
   "name": "react-color-picker-palette",
-  "version": "1.1.2",
-  "description": "ColorPickerPalette is a React reusable color picker palette written in ES6.",
-  "main": "ColorPickerPalette.jsx",
-  "keywords": [
-    "javascript",
-    "react",
-    "color",
-    "picker",
-    "palette",
-    "color picker",
-    "color picker palette"
-  ],
+  "version": "2.0.0",
+  "description": "ColorPickerPalette is a React reusable color picker palette",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gibbok/react-color-picker-palette.git"
+    "url": "git+https://github.com/gibbok/react-color-picker-palette.git"
   },
-  "author": "GibboK",
-  "license": "MIT",
-  "scripts": {
-    "start": "webpack-dev-server --hot"
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gibbok/react-color-picker-palette/issues"
   },
-  "dependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.9.1",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "gulp": "^3.9.1",
-    "gulp-jscs": "4.0.0",
-    "gulp-jshint": "^2.0.1",
-    "gulp-util": "^3.0.7",
-    "gulp-jscs-stylish": "^1.3.0",
-    "jshint-stylish": "^2.1.0",
-    "open": "^0.0.5",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
-  },
-  "devDependencies": {
-    "gulp-jshint": "^2.0.1",
-    "jshint": "^2.9.2"
-  }
+  "homepage": "https://github.com/gibbok/react-color-picker-palette#readme"
 }
