@@ -11,6 +11,7 @@ const rgbToHex = (r: number, g: number, b: number) =>
   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
 
 const ColorPickerPalette = () => {
+  const [colorSelected, setColorSelected] = React.useState<string | undefined>();
   const canvasRef = React.createRef<HTMLCanvasElement>();
 
   React.useEffect(() => {
@@ -18,6 +19,7 @@ const ColorPickerPalette = () => {
 
     if (canvas) {
       const ctx = canvas.getContext('2d');
+      console.log('canvas w', canvas.width, canvas.height);
       if (ctx) {
         let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
         gradient.addColorStop(0, 'rgb(255, 0, 0)');
@@ -47,14 +49,14 @@ const ColorPickerPalette = () => {
       const ctx = canvas.getContext('2d');
       if (ctx) {
         const canvasRect = canvas.getBoundingClientRect();
-        const colorEventX = event.pageX - canvasRect.left;
-        const colorEventY = event.pageY - canvasRect.top;
+        const colorEventX = event.clientX - canvasRect.left;
+        const colorEventY = event.clientY - canvasRect.top;
         const imageData = ctx.getImageData(colorEventX, colorEventY, 1, 1);
         const r = imageData.data[0];
         const g = imageData.data[1];
-        const b = imageData.data[3];
+        const b = imageData.data[2];
         const result = rgbToHex(r, g, b);
-        console.log(result);
+        setColorSelected(result);
         return result;
       }
     }
@@ -63,7 +65,17 @@ const ColorPickerPalette = () => {
 
   return (
     <div>
-      <canvas ref={canvasRef} onClick={selectColor}></canvas>
+      <canvas
+        style={{ margin: 0, padding: 0 }}
+        width={400}
+        height={400}
+        ref={canvasRef}
+        onClick={selectColor}
+      ></canvas>
+      <br />
+      Result: {colorSelected}
+      <br />
+      <div style={{ width: 100, height: 100, backgroundColor: colorSelected }} />
     </div>
   );
 };
