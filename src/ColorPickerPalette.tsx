@@ -1,6 +1,14 @@
-/*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2016 GibboK */
+/*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2020 GibboK */
 
 import * as React from 'react';
+
+const componentToHex = (color: number) => {
+  const hex = color.toString(16);
+  return hex.length == 1 ? '0' + hex : hex;
+};
+
+const rgbToHex = (r: number, g: number, b: number) =>
+  `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
 
 const ColorPickerPalette = () => {
   const canvasRef = React.createRef<HTMLCanvasElement>();
@@ -32,9 +40,30 @@ const ColorPickerPalette = () => {
     }
   });
 
+  const selectColor = (event: React.MouseEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        const canvasRect = canvas.getBoundingClientRect();
+        const colorEventX = event.pageX - canvasRect.left;
+        const colorEventY = event.pageY - canvasRect.top;
+        const imageData = ctx.getImageData(colorEventX, colorEventY, 1, 1);
+        const r = imageData.data[0];
+        const g = imageData.data[1];
+        const b = imageData.data[3];
+        const result = rgbToHex(r, g, b);
+        console.log(result);
+        return result;
+      }
+    }
+    return 'black';
+  };
+
   return (
     <div>
-      <canvas ref={canvasRef}></canvas>
+      <canvas ref={canvasRef} onClick={selectColor}></canvas>
     </div>
   );
 };
