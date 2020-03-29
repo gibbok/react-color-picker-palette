@@ -5,7 +5,6 @@ import * as React from 'react';
 const INITIAL_COLOR = '#ffffff';
 
 const saveToClipboard = (value: string): void => {
-  console.log('TOBECOPIE', value);
   navigator.clipboard.writeText(value).then(
     () => ({}),
     () => console.warn('Unable to copy.')
@@ -74,7 +73,7 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
         const result = rgbToHex(r, g, b);
         setPrevColor(color);
         setColor(result);
-        saveToClipboard(color);
+        saveToClipboard(result);
         onSelectColor({ rgb: [r, g, b], hex: result });
         return result;
       }
