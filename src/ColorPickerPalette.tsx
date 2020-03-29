@@ -31,10 +31,11 @@ const rgbToHex = (rgbColor: RGBColor) =>
 
 const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   const [color, setColor] = React.useState<string>(NO_COLOR);
+  const [colorRGB, setColorRGB] = React.useState<RGBColor | null>();
   const [prevColor, setPrevColor] = React.useState<string>(NO_COLOR);
 
-  const [markerX, setMarkerX] = React.useState<number>(-3);
-  const [markerY, setMarkerY] = React.useState<number>(-3);
+  const [markerX, setMarkerX] = React.useState<number | null>(null);
+  const [markerY, setMarkerY] = React.useState<number | null>(null);
 
   const canvasRef = React.createRef<HTMLCanvasElement>();
   let canvas: HTMLCanvasElement | null = null;
@@ -78,6 +79,7 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
       const b = imageData.data[2];
       const newRGB: RGBColor = [r, g, b];
       const newHex = rgbToHex(newRGB);
+      setColorRGB(newRGB);
       setPrevColor(color);
       setColor(newHex);
       saveToClipboard(newHex);
@@ -102,22 +104,32 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
           setMarkerPos(e);
         }}
       ></canvas>
-      <div
-        style={{
-          ...defaultStyles.marker,
-          top: markerY,
-          left: markerX
-        }}
-      />
-      <div style={{ ...defaultStyles.colors }}>
+      {markerX && markerY && (
         <div
-          onClick={() => saveToClipboard(color)}
-          style={{ ...defaultStyles.color, backgroundColor: color }}
+          style={{
+            ...defaultStyles.marker,
+            top: markerY,
+            left: markerX
+          }}
         />
-        <div
-          onClick={() => saveToClipboard(prevColor)}
-          style={{ ...defaultStyles.prevColor, backgroundColor: prevColor }}
-        />
+      )}
+      <div style={{ ...defaultStyles.results }}>
+        <div style={{ ...defaultStyles.result }}>
+          <div>{color}</div>
+        </div>
+        <div style={{ ...defaultStyles.result }}>
+          <div>{colorRGB && `rgb(${colorRGB[0]}, ${colorRGB[1]}, ${colorRGB[2]})`}</div>
+        </div>
+        <div style={{ ...defaultStyles.colors }}>
+          <div
+            onClick={() => saveToClipboard(color)}
+            style={{ ...defaultStyles.color, backgroundColor: color }}
+          />
+          <div
+            onClick={() => saveToClipboard(prevColor)}
+            style={{ ...defaultStyles.prevColor, backgroundColor: prevColor }}
+          />
+        </div>
       </div>
     </div>
   );

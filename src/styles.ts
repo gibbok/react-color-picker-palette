@@ -3,6 +3,7 @@ type ComponentStructure =
   | 'canvas'
   | 'marker'
   | 'results'
+  | 'result'
   | 'colors'
   | 'color'
   | 'prevColor';
@@ -12,9 +13,12 @@ type Styles = Record<ComponentStructure, React.CSSProperties>;
 export const defaultStyles: Styles = {
   colorPicker: {
     display: 'flex',
-    width: 410,
+    fontFamily: 'Arial,Helvetica,sans-serif',
+    fontSize: 12,
+    width: 420,
     padding: 10,
-    border: '1px solid #dddddd'
+    border: '1px solid #dddddd',
+    boxShadow: 'rgba(0, 0, 0, 0.10) 2px 2px 4px 1px'
   },
   canvas: {
     margin: 0,
@@ -31,16 +35,30 @@ export const defaultStyles: Styles = {
     borderRadius: 6,
     boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
   },
-  results: {},
+  results: {
+    display: 'flex',
+    width: '100%',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
+  },
+  result: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: 30,
+    border: '1px solid #dddddd',
+    color: '#585858'
+  },
   colors: {
     display: 'flex'
   },
   color: {
-    width: 50,
-    height: 50
+    width: 55,
+    height: 55
   },
   prevColor: {
-    width: 50,
-    height: 50
+    width: 55,
+    height: 55
   }
 };
