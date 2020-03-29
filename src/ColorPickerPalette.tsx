@@ -1,6 +1,7 @@
 /*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2020 GibboK */
 
 import * as React from 'react';
+import { defaultStyles } from './styles';
 
 type RGBColor = readonly [number, number, number];
 
@@ -92,11 +93,9 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   };
 
   return (
-    <div>
+    <div style={{ ...defaultStyles.colorPicker }}>
       <canvas
-        style={{ margin: 0, padding: 0 }}
-        width={400}
-        height={400}
+        style={{ ...defaultStyles.canvas }}
         ref={canvasRef}
         onClick={e => {
           selectColor(e);
@@ -105,27 +104,21 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
       ></canvas>
       <div
         style={{
-          position: 'absolute',
+          ...defaultStyles.marker,
           top: markerY,
-          left: markerX,
-          width: 6,
-          height: 6,
-          border: '1px solid #fff',
-          borderRadius: 6,
-          boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
+          left: markerX
         }}
       />
-      <br />
-      Result: {color}
-      <br />
-      <div
-        onClick={() => saveToClipboard(color)}
-        style={{ width: 100, height: 100, backgroundColor: color }}
-      />
-      <div
-        onClick={() => saveToClipboard(prevColor)}
-        style={{ width: 100, height: 100, backgroundColor: prevColor }}
-      />
+      <div style={{ ...defaultStyles.colors }}>
+        <div
+          onClick={() => saveToClipboard(color)}
+          style={{ ...defaultStyles.color, backgroundColor: color }}
+        />
+        <div
+          onClick={() => saveToClipboard(prevColor)}
+          style={{ ...defaultStyles.prevColor, backgroundColor: prevColor }}
+        />
+      </div>
     </div>
   );
 };
