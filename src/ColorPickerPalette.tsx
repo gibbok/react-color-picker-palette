@@ -2,6 +2,16 @@
 
 import * as React from 'react';
 
+const INITIAL_COLOR = '#ffffff';
+
+const saveToClipboard = (value: string): void => {
+  console.log('TOBECOPIE', value);
+  navigator.clipboard.writeText(value).then(
+    () => ({}),
+    () => console.warn('Unable to copy.')
+  );
+};
+
 const componentToHex = (color: number) => {
   const hex = color.toString(16);
   return hex.length == 1 ? '0' + hex : hex;
@@ -17,7 +27,8 @@ type ColorPickerPaletteProps = Readonly<{
 }>;
 
 const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
-  const [colorSelected, setColorSelected] = React.useState<string | undefined>();
+  const [color, setColor] = React.useState<string>(INITIAL_COLOR);
+  const [prevColor, setPrevColor] = React.useState<string>(INITIAL_COLOR);
   const canvasRef = React.createRef<HTMLCanvasElement>();
 
   React.useEffect(() => {
@@ -25,7 +36,6 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
 
     if (canvas) {
       const ctx = canvas.getContext('2d');
-      console.log('canvas w', canvas.width, canvas.height);
       if (ctx) {
         let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
         gradient.addColorStop(0, 'rgb(255, 0, 0)');
@@ -62,7 +72,9 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
         const g = imageData.data[1];
         const b = imageData.data[2];
         const result = rgbToHex(r, g, b);
-        setColorSelected(result);
+        setPrevColor(color);
+        setColor(result);
+        saveToClipboard(color);
         onSelectColor({ rgb: [r, g, b], hex: result });
         return result;
       }
@@ -80,9 +92,16 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
         onClick={selectColor}
       ></canvas>
       <br />
-      Result: {colorSelected}
+      Result: {color}
       <br />
-      <div style={{ width: 100, height: 100, backgroundColor: colorSelected }} />
+      <div
+        onClick={() => saveToClipboard(color)}
+        style={{ width: 100, height: 100, backgroundColor: color }}
+      />
+      <div
+        onClick={() => saveToClipboard(prevColor)}
+        style={{ width: 100, height: 100, backgroundColor: prevColor }}
+      />
     </div>
   );
 };
