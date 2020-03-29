@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-const INITIAL_COLOR = '#ffffff';
+const NO_COLOR = 'transparent';
 
 const saveToClipboard = (value: string): void => {
   navigator.clipboard.writeText(value).then(
@@ -19,20 +19,22 @@ const componentToHex = (color: number) => {
 const rgbToHex = (r: number, g: number, b: number) =>
   `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
 
-type Colors = Readonly<{ rgb: [number, number, number]; hex: string }>;
+type RGBColor = readonly [number, number, number];
+
+type Colors = Readonly<{ rgb: RGBColor; hex: string }>;
 
 type ColorPickerPaletteProps = Readonly<{
   onSelectColor: (x: Colors) => void;
 }>;
 
 const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
-  const [color, setColor] = React.useState<string>(INITIAL_COLOR);
-  const [prevColor, setPrevColor] = React.useState<string>(INITIAL_COLOR);
+  const [color, setColor] = React.useState<string>(NO_COLOR);
+  const [prevColor, setPrevColor] = React.useState<string>(NO_COLOR);
+
   const canvasRef = React.createRef<HTMLCanvasElement>();
+  const canvas = canvasRef.current;
 
   React.useEffect(() => {
-    const canvas = canvasRef.current;
-
     if (canvas) {
       const ctx = canvas.getContext('2d');
       if (ctx) {
@@ -58,8 +60,6 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   });
 
   const selectColor = (event: React.MouseEvent<HTMLCanvasElement>) => {
-    const canvas = canvasRef.current;
-
     if (canvas) {
       const ctx = canvas.getContext('2d');
       if (ctx) {
@@ -70,15 +70,15 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
         const r = imageData.data[0];
         const g = imageData.data[1];
         const b = imageData.data[2];
-        const result = rgbToHex(r, g, b);
+        const newColor = rgbToHex(r, g, b);
         setPrevColor(color);
-        setColor(result);
-        saveToClipboard(result);
-        onSelectColor({ rgb: [r, g, b], hex: result });
-        return result;
+        setColor(newColor);
+        saveToClipboard(newColor);
+        onSelectColor({ rgb: [r, g, b], hex: newColor });
+        return newColor;
       }
     }
-    return 'black';
+    return NO_COLOR;
   };
 
   return (
