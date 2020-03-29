@@ -23,6 +23,8 @@ type RGBColor = readonly [number, number, number];
 
 type Colors = Readonly<{ rgb: RGBColor; hex: string }>;
 
+type MouseEventCanvas = React.MouseEvent<HTMLCanvasElement>;
+
 type ColorPickerPaletteProps = Readonly<{
   onSelectColor: (x: Colors) => void;
 }>;
@@ -30,11 +32,13 @@ type ColorPickerPaletteProps = Readonly<{
 const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   const [color, setColor] = React.useState<string>(NO_COLOR);
   const [prevColor, setPrevColor] = React.useState<string>(NO_COLOR);
+  const [markerX, setMarkerX] = React.useState<number>(-3);
+  const [markerY, setMarkerY] = React.useState<number>(-3);
 
   const canvasRef = React.createRef<HTMLCanvasElement>();
-  const canvas = canvasRef.current;
 
   React.useEffect(() => {
+    const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext('2d');
       if (ctx) {
@@ -59,7 +63,8 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
     }
   });
 
-  const selectColor = (event: React.MouseEvent<HTMLCanvasElement>) => {
+  const selectColor = (event: MouseEventCanvas) => {
+    const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext('2d');
       if (ctx) {
@@ -81,6 +86,22 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
     return NO_COLOR;
   };
 
+  const setMarkerPos = (e: MouseEventCanvas) => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        const canvasRect = canvas.getBoundingClientRect();
+        setMarkerX(e.pageX - canvasRect.left / 2);
+        setMarkerY(e.pageY - canvasRect.top / 2);
+        // this.refs.previewColorMarker.style.left =
+        //   event.pageX - rect.left - this.styles.marker.width / 2 + 'px';
+        // this.refs.previewColorMarker.style.top =
+        //   event.pageY - rect.top - this.styles.marker.height / 2 + 'px';
+      }
+    }
+  };
+
   return (
     <div>
       <canvas
@@ -88,8 +109,23 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
         width={400}
         height={400}
         ref={canvasRef}
-        onClick={selectColor}
+        onClick={e => {
+          selectColor(e);
+          setMarkerPos(e);
+        }}
       ></canvas>
+      <div
+        style={{
+          position: 'absolute',
+          top: markerY,
+          left: markerX,
+          width: 6,
+          height: 6,
+          border: '1px solid #fff',
+          borderRadius: 6,
+          boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
+        }}
+      />
       <br />
       Result: {color}
       <br />
