@@ -2,22 +2,6 @@
 
 import * as React from 'react';
 
-const NO_COLOR = 'transparent';
-
-const saveToClipboard = (value: string): Promise<void | {}> =>
-  navigator.clipboard.writeText(value).then(
-    () => ({}),
-    () => console.warn('Unable to copy.')
-  );
-
-const componentToHex = (color: number) => {
-  const hex = color.toString(16);
-  return hex.length == 1 ? `0${hex}` : hex;
-};
-
-const rgbToHex = (rgbColor: RGBColor) =>
-  `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
-
 type RGBColor = readonly [number, number, number];
 
 type ColorPicked = Readonly<{ rgb: RGBColor; hex: string }>;
@@ -28,19 +12,40 @@ type ColorPickerPaletteProps = Readonly<{
   onSelectColor: (x: ColorPicked) => void;
 }>;
 
+const NO_COLOR = 'transparent';
+
+const saveToClipboard = (value: string): Promise<void | {}> =>
+  navigator.clipboard.writeText(value).then(
+    () => ({}),
+    e => console.warn(`Unable to copy: ${e}`)
+  );
+
+const componentToHex = (color: number) => {
+  const hex = color.toString(16);
+  return hex.length == 1 ? `0${hex}` : hex;
+};
+
+const rgbToHex = (rgbColor: RGBColor) =>
+  `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
+
 const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   const [color, setColor] = React.useState<string>(NO_COLOR);
   const [prevColor, setPrevColor] = React.useState<string>(NO_COLOR);
+
   const [markerX, setMarkerX] = React.useState<number>(-3);
   const [markerY, setMarkerY] = React.useState<number>(-3);
 
   const canvasRef = React.createRef<HTMLCanvasElement>();
+  let canvas: HTMLCanvasElement | null = null;
+  let ctx: CanvasRenderingContext2D | null = null;
+  let canvasRect: DOMRect | null = null;
 
   React.useEffect(() => {
-    const canvas = canvasRef.current;
+    canvas = canvasRef.current;
     if (canvas) {
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
+      ctx = canvas.getContext('2d');
+      canvasRect = canvas.getBoundingClientRect();
+      if (ctx && canvasRect) {
         let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
         gradient.addColorStop(0, 'rgb(255, 0, 0)');
         gradient.addColorStop(0.15, 'rgb(255, 0, 255)');
@@ -62,42 +67,27 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
     }
   });
 
-  const selectColor = (event: MouseEventCanvas) => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        const canvasRect = canvas.getBoundingClientRect();
-        const colorEventX = event.clientX - canvasRect.left;
-        const colorEventY = event.clientY - canvasRect.top;
-        const imageData = ctx.getImageData(colorEventX, colorEventY, 1, 1);
-        const r = imageData.data[0];
-        const g = imageData.data[1];
-        const b = imageData.data[2];
-        const newColor = rgbToHex([r, g, b]);
-        setPrevColor(color);
-        setColor(newColor);
-        saveToClipboard(newColor);
-        onSelectColor({ rgb: [r, g, b], hex: newColor });
-        return newColor;
-      }
+  const selectColor = (event: MouseEventCanvas): void => {
+    if (canvas && ctx && canvasRect) {
+      const colorX = event.clientX - canvasRect.left;
+      const colorY = event.clientY - canvasRect.top;
+      const imageData = ctx.getImageData(colorX, colorY, 1, 1);
+      const r = imageData.data[0];
+      const g = imageData.data[1];
+      const b = imageData.data[2];
+      const newRGB: RGBColor = [r, g, b];
+      const newHex = rgbToHex(newRGB);
+      setPrevColor(color);
+      setColor(newHex);
+      saveToClipboard(newHex);
+      onSelectColor({ rgb: newRGB, hex: newHex });
     }
-    return NO_COLOR;
   };
 
   const setMarkerPos = (e: MouseEventCanvas) => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      if (ctx) {
-        const canvasRect = canvas.getBoundingClientRect();
-        setMarkerX(e.pageX - canvasRect.left / 2);
-        setMarkerY(e.pageY - canvasRect.top / 2);
-        // this.refs.previewColorMarker.style.left =
-        //   event.pageX - rect.left - this.styles.marker.width / 2 + 'px';
-        // this.refs.previewColorMarker.style.top =
-        //   event.pageY - rect.top - this.styles.marker.height / 2 + 'px';
-      }
+    if (canvas && ctx && canvasRect) {
+      setMarkerX(e.pageX - canvasRect.left / 2);
+      setMarkerY(e.pageY - canvasRect.top / 2);
     }
   };
 
