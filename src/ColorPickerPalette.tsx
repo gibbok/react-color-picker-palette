@@ -4,29 +4,28 @@ import * as React from 'react';
 
 const NO_COLOR = 'transparent';
 
-const saveToClipboard = (value: string): void => {
+const saveToClipboard = (value: string): Promise<void | {}> =>
   navigator.clipboard.writeText(value).then(
     () => ({}),
     () => console.warn('Unable to copy.')
   );
-};
 
 const componentToHex = (color: number) => {
   const hex = color.toString(16);
-  return hex.length == 1 ? '0' + hex : hex;
+  return hex.length == 1 ? `0${hex}` : hex;
 };
 
-const rgbToHex = (r: number, g: number, b: number) =>
-  `#${componentToHex(r)}${componentToHex(g)}${componentToHex(b)}`;
+const rgbToHex = (rgbColor: RGBColor) =>
+  `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
 
 type RGBColor = readonly [number, number, number];
 
-type Colors = Readonly<{ rgb: RGBColor; hex: string }>;
+type ColorPicked = Readonly<{ rgb: RGBColor; hex: string }>;
 
 type MouseEventCanvas = React.MouseEvent<HTMLCanvasElement>;
 
 type ColorPickerPaletteProps = Readonly<{
-  onSelectColor: (x: Colors) => void;
+  onSelectColor: (x: ColorPicked) => void;
 }>;
 
 const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
@@ -75,7 +74,7 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
         const r = imageData.data[0];
         const g = imageData.data[1];
         const b = imageData.data[2];
-        const newColor = rgbToHex(r, g, b);
+        const newColor = rgbToHex([r, g, b]);
         setPrevColor(color);
         setColor(newColor);
         saveToClipboard(newColor);
