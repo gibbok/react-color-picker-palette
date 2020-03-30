@@ -4,7 +4,12 @@
 [x] Select color and previouse, copy to clipboard
 [x] Styled
 [x] Readme
-[ ] Styleable
+[x] Styleable
+[ ] Example of customization
 [ ] Script publish
 [ ] Publish StoryBook
 [ ] Add dark theme
+[ ] Add GitHub link and description
+[ ] Setup Jest testing, add test for all util fns
+[ ] Setup Cypress
+[ ] Write test for Cypress

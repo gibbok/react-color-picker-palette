@@ -25,8 +25,7 @@ Documentation and examples are visible in StoryBook, to run it just execute `npm
 
 ---
 
-### Customization
+### Styles and customization
 
-You can customize the defaults layout for the entire componenet using CSS.
-The default style is visible at XXX.
-Example of customitization are visible in StoryBook.
+ColorPickerPalette comes with two elegant light and dark theme, but you can build your own theme for the entire componenet using CSS.
+The default themes and examples of customitization are visible in StoryBook.
