@@ -8,7 +8,7 @@ type ComponentStructure =
   | 'color'
   | 'prevColor';
 
-type Styles = Record<ComponentStructure, React.CSSProperties>;
+export type Styles = Record<ComponentStructure, React.CSSProperties>;
 
 export const defaultStyles: Styles = {
   colorPicker: {

@@ -1,7 +1,7 @@
 /*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2020 GibboK */
 
 import * as React from 'react';
-import { defaultStyles } from './styles';
+import { defaultStyles, Styles } from './styles';
 
 type RGBColor = readonly [number, number, number];
 
@@ -10,6 +10,7 @@ type ColorPicked = Readonly<{ rgb: RGBColor; hex: string }>;
 type MouseEventCanvas = React.MouseEvent<HTMLCanvasElement>;
 
 type ColorPickerPaletteProps = Readonly<{
+  styles?: Styles;
   onSelectColor: (x: ColorPicked) => void;
 }>;
 
@@ -29,7 +30,7 @@ const componentToHex = (color: number) => {
 const rgbToHex = (rgbColor: RGBColor) =>
   `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
 
-const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
+const ColorPickerPalette = ({ styles = defaultStyles, onSelectColor }: ColorPickerPaletteProps) => {
   const [color, setColor] = React.useState<string>(NO_COLOR);
   const [colorRGB, setColorRGB] = React.useState<RGBColor | null>();
   const [prevColor, setPrevColor] = React.useState<string>(NO_COLOR);
@@ -95,9 +96,9 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
   };
 
   return (
-    <div style={{ ...defaultStyles.colorPicker }}>
+    <div style={{ ...styles.colorPicker }}>
       <canvas
-        style={{ ...defaultStyles.canvas }}
+        style={{ ...styles.canvas }}
         ref={canvasRef}
         onClick={e => {
           selectColor(e);
@@ -107,27 +108,27 @@ const ColorPickerPalette = ({ onSelectColor }: ColorPickerPaletteProps) => {
       {markerX && markerY && (
         <div
           style={{
-            ...defaultStyles.marker,
+            ...styles.marker,
             top: markerY,
             left: markerX
           }}
         />
       )}
-      <div style={{ ...defaultStyles.results }}>
-        <div style={{ ...defaultStyles.result }}>
+      <div style={{ ...styles.results }}>
+        <div style={{ ...styles.result }}>
           <div>{color}</div>
         </div>
-        <div style={{ ...defaultStyles.result }}>
+        <div style={{ ...styles.result }}>
           <div>{colorRGB && `rgb(${colorRGB[0]}, ${colorRGB[1]}, ${colorRGB[2]})`}</div>
         </div>
-        <div style={{ ...defaultStyles.colors }}>
+        <div style={{ ...styles.colors }}>
           <div
             onClick={() => saveToClipboard(color)}
-            style={{ ...defaultStyles.color, backgroundColor: color }}
+            style={{ ...styles.color, backgroundColor: color }}
           />
           <div
             onClick={() => saveToClipboard(prevColor)}
-            style={{ ...defaultStyles.prevColor, backgroundColor: prevColor }}
+            style={{ ...styles.prevColor, backgroundColor: prevColor }}
           />
         </div>
       </div>
