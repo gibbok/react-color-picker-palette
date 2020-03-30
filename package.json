@@ -1,10 +1,10 @@
 {
   "name": "react-color-picker-palette",
   "version": "2.0.0",
-  "description": "",
+  "description": "ColorPickerPalette is a React reusable color picker palette written in TypeScript.",
   "main": "./src/index.ts",
   "keywords": [
-    "javascript",
+    "typescript",
     "react",
     "color",
     "picker",

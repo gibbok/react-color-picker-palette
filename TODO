@@ -3,7 +3,8 @@
 [x] Add copy and past on clipboard
 [x] Select color and previouse, copy to clipboard
 [x] Styled
+[x] Readme
 [ ] Styleable
 [ ] Script publish
-[ ] Readme
-[ ] Publish storybook
+[ ] Publish StoryBook
+[ ] Add dark theme
