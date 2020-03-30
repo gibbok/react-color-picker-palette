@@ -1,7 +1,7 @@
 /*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2020 GibboK */
 
 import * as React from 'react';
-import { defaultStyles, Styles } from './styles';
+import { defaultStyles, Styles, darkStyles } from './styles';
 
 type RGBColor = readonly [number, number, number];
 
@@ -31,7 +31,11 @@ const componentToHex = (color: number) => {
 const rgbToHex = (rgbColor: RGBColor) =>
   `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
 
-const ColorPickerPalette = ({ styles = defaultStyles, onSelectColor }: ColorPickerPaletteProps) => {
+const ColorPickerPalette = ({
+  dark = false,
+  styles = dark ? darkStyles : defaultStyles,
+  onSelectColor
+}: ColorPickerPaletteProps) => {
   const [color, setColor] = React.useState<string>(NO_COLOR);
   const [colorRGB, setColorRGB] = React.useState<RGBColor | null>();
   const [prevColor, setPrevColor] = React.useState<string>(NO_COLOR);
