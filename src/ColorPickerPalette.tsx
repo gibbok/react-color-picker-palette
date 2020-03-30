@@ -11,6 +11,7 @@ type MouseEventCanvas = React.MouseEvent<HTMLCanvasElement>;
 
 type ColorPickerPaletteProps = Readonly<{
   styles?: Styles;
+  dark?: boolean;
   onSelectColor: (x: ColorPicked) => void;
 }>;
 
