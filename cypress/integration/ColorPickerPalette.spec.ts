@@ -18,7 +18,7 @@ describe('ColorPickerPalette', () => {
       cy.get(RESULT_RGB).should('contain', 'rgb(0, 253, 236)');
     });
 
-    it('should display result with selected color and previouse color', () => {
+    it('should display picked with previouse and current colors', () => {
       cy.get(CANVAS).click();
       cy.get(PICKED_COLOR).should('have.css', 'background-color', 'rgb(0, 253, 236)');
       cy.get(PICKED_PREV_COLOR).should('have.css', 'background-color', 'rgba(0, 0, 0, 0)');

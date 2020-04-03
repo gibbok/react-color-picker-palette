@@ -107,7 +107,7 @@ const ColorPickerPalette = ({
       )}
       <div style={{ ...styles.results }}>
         <div style={{ ...styles.result }}>
-          <div data-cy="result-hex">{color}</div>
+          <div data-cy="result-hex">{color === NO_COLOR ? '' : color}</div>
         </div>
         <div style={{ ...styles.result }}>
           <div data-cy="result-rgb">
