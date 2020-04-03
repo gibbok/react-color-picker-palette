@@ -5,12 +5,12 @@
 [x] Styled
 [x] Readme
 [x] Styleable
+[x] Add dark theme
 [x] Example of customization
 [x] Setup Jest testing, add test for all util fns
 [x] Add snapshots
-[ ] Script publish
-[ ] Publish StoryBook
-[x] Add dark theme
-[ ] Add GitHub link and description
 [ ] Setup Cypress
 [ ] Write test for Cypress
+[ ] Script publish
+[ ] Publish StoryBook
+[ ] Add GitHub link and description
