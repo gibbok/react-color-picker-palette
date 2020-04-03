@@ -6,6 +6,9 @@ module.exports = ({ config }) => {
       {
         loader: require.resolve("awesome-typescript-loader")
       },
+    ],
+    exclude:[
+      path.resolve(__dirname, "./cypress")
     ]
   });
   config.resolve.extensions.push(".ts", ".tsx");
