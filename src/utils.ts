@@ -6,10 +6,10 @@ export const saveToClipboard = (value: string): Promise<void | {}> =>
     e => console.warn(`Unable to copy: ${e}`)
   );
 
-export const componentToHex = (color: number): string => {
+export const primaryToHex = (color: number): string => {
   const hex = color.toString(16);
   return hex.length == 1 ? `0${hex}` : hex;
 };
 
 export const rgbToHex = (rgbColor: RGBColor): string =>
-  `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
+  `#${primaryToHex(rgbColor[0])}${primaryToHex(rgbColor[1])}${primaryToHex(rgbColor[2])}`;
