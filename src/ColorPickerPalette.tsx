@@ -88,6 +88,7 @@ const ColorPickerPalette = ({
   return (
     <div style={{ ...styles.colorPicker }}>
       <canvas
+        data-cy="canvas"
         style={{ ...styles.canvas }}
         ref={canvasRef}
         onClick={e => {
@@ -106,17 +107,21 @@ const ColorPickerPalette = ({
       )}
       <div style={{ ...styles.results }}>
         <div style={{ ...styles.result }}>
-          <div>{color}</div>
+          <div data-cy="result-hex">{color}</div>
         </div>
         <div style={{ ...styles.result }}>
-          <div>{colorRGB && `rgb(${colorRGB[0]}, ${colorRGB[1]}, ${colorRGB[2]})`}</div>
+          <div data-cy="result-rgb">
+            {colorRGB && `rgb(${colorRGB[0]}, ${colorRGB[1]}, ${colorRGB[2]})`}
+          </div>
         </div>
         <div style={{ ...styles.colors }}>
           <div
+            data-cy="picked-color"
             onClick={() => saveToClipboard(color)}
             style={{ ...styles.color, backgroundColor: color }}
           />
           <div
+            data-cy="picked-prevColor"
             onClick={() => saveToClipboard(prevColor)}
             style={{ ...styles.prevColor, backgroundColor: prevColor }}
           />
