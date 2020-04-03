@@ -7,8 +7,8 @@ const PICKED_COLOR = '[data-cy=picked-color]';
 const PICKED_PREV_COLOR = '[data-cy=picked-prevColor]';
 const MARKER = '[data-cy=marker]';
 
-const COLOR_1 = '#00fdec';
-const COLOR_2 = 'rgb(0, 253, 236)';
+const COLOR_1 = '#00fae4';
+const COLOR_2 = 'rgb(0, 250, 228)';
 const COLOR_3 = 'rgba(0, 0, 0, 0)';
 
 describe('ColorPickerPalette', () => {
@@ -25,8 +25,8 @@ describe('ColorPickerPalette', () => {
     cy.get(CANVAS).click();
     cy.get(MARKER)
       .should('exist')
-      .should('have.css', 'top', '84.5px')
-      .should('have.css', 'left', '159.5px');
+      .should('have.css', 'top', '88.5px')
+      .should('have.css', 'left', '163.5px');
   });
 
   it('should display hex and rgb colors in results', () => {
