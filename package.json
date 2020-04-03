@@ -26,7 +26,7 @@
     "test": "TZ=UTC jest",
     "test:no-coverage": "TZ=UTC jest --coverage=false",
     "test:watch": "TZ=UTC jest --coverage=false --watch",
-    "loki": "loki test --port 9001",
+    "loki": "loki test --port 6006",
     "loki:approve": "loki approve",
     "cypress:open": "cypress open"
   },
