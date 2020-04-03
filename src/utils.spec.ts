@@ -40,10 +40,13 @@ describe('utils', () => {
       });
     });
 
-    it('should save color to clipboard', async () => {
+    it('should write color to clipboard', async () => {
       saveToClipboard(mockColor);
-      expect(navigator.clipboard.writeText).toHaveBeenCalled();
       expect(navigator.clipboard.writeText).toHaveBeenCalledWith(mockColor);
+    });
+
+    it('should read color to clipboard', async () => {
+      saveToClipboard(mockColor);
       expect(await navigator.clipboard.readText()).toEqual(mockColor);
     });
   });
