@@ -5,11 +5,11 @@
 [x] Styled
 [x] Readme
 [x] Styleable
-[ ] Example of customization
+[x] Example of customization
+[ ] Setup Jest testing, add test for all util fns
 [ ] Script publish
 [ ] Publish StoryBook
-[ ] Add dark theme
+[x] Add dark theme
 [ ] Add GitHub link and description
-[ ] Setup Jest testing, add test for all util fns
 [ ] Setup Cypress
 [ ] Write test for Cypress

@@ -2,34 +2,21 @@
 
 import * as React from 'react';
 import { defaultStyles, Styles, darkStyles } from './styles';
+import { rgbToHex, saveToClipboard } from './utils';
 
-type RGBColor = readonly [number, number, number];
+export type RGBColor = readonly [number, number, number];
 
-type ColorPicked = Readonly<{ rgb: RGBColor; hex: string }>;
+export type ColorPicked = Readonly<{ rgb: RGBColor; hex: string }>;
 
 type MouseEventCanvas = React.MouseEvent<HTMLCanvasElement>;
 
-type ColorPickerPaletteProps = Readonly<{
+export type ColorPickerPaletteProps = Readonly<{
   styles?: Styles;
   dark?: boolean;
   onSelectColor: (x: ColorPicked) => void;
 }>;
 
 const NO_COLOR = 'transparent';
-
-const saveToClipboard = (value: string): Promise<void | {}> =>
-  navigator.clipboard.writeText(value).then(
-    () => ({}),
-    e => console.warn(`Unable to copy: ${e}`)
-  );
-
-const componentToHex = (color: number) => {
-  const hex = color.toString(16);
-  return hex.length == 1 ? `0${hex}` : hex;
-};
-
-const rgbToHex = (rgbColor: RGBColor) =>
-  `#${componentToHex(rgbColor[0])}${componentToHex(rgbColor[1])}${componentToHex(rgbColor[2])}`;
 
 const ColorPickerPalette = ({
   dark = false,
