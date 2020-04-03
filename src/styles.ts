@@ -20,16 +20,15 @@ export const defaultStyles: Styles = {
     color: '#585858',
     width: 420,
     padding: 10,
-    border: '1px solid #dddddd',
+    border,
     boxShadow: 'rgba(0, 0, 0, 0.10) 2px 2px 4px 1px',
     backgroundColor: '#ffffff'
   },
   canvas: {
-    margin: 0,
+    margin: '0 10px 0 0',
     padding: 0,
     width: 300,
-    height: 150,
-    marginRight: 10
+    height: 150
   },
   marker: {
     position: 'absolute',
