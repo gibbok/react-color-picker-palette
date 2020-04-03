@@ -46,11 +46,11 @@ describe('ColorPickerPalette', () => {
   });
 
   describe('should render color in results', () => {
-    it('should have transparent for color', () => {
+    it('should have transparent for result color', () => {
       expect(colorDiv.get(0).props.style.backgroundColor).toBe('transparent');
     });
 
-    it('should have transparent for prevColor', () => {
+    it('should have transparent for result prevColor', () => {
       expect(prevColorDiv.get(0).props.style.backgroundColor).toBe('transparent');
     });
   });
