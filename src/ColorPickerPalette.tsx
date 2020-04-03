@@ -98,6 +98,7 @@ const ColorPickerPalette = ({
       ></canvas>
       {markerX && markerY && (
         <div
+          data-cy="marker"
           style={{
             ...styles.marker,
             top: markerY,
