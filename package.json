@@ -27,7 +27,8 @@
     "test:no-coverage": "TZ=UTC jest --coverage=false",
     "test:watch": "TZ=UTC jest --coverage=false --watch",
     "test:visual": "loki test --port 9001",
-    "test:approve-visual": "loki approve"
+    "test:approve-visual": "loki approve",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@bahmutov/add-typescript-to-cypress": "^2.1.2",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-info": "^5.3.13",
     "@storybook/addon-knobs": "^5.3.13",
@@ -69,6 +71,7 @@
     "canvas": "^2.6.1",
     "css-loader": "^3.4.2",
     "csstype": "^2.6.9",
+    "cypress": "^4.3.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.4.4",
