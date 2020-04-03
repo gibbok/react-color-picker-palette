@@ -23,9 +23,11 @@ ColorPickerPalette is a React reusable color picker palette written in TypeScrip
 
 Documentation and examples are visible in StoryBook, to run it just execute `npm run storybook`.
 
----
-
 ### Styles and customization
 
 ColorPickerPalette comes with two elegant light and dark theme, but you can build your own theme for the entire componenet using CSS.
 The default themes and examples of customitization are visible in StoryBook.
+
+### Developement
+
+

@@ -10,9 +10,11 @@
 [x] Setup Jest testing, add test for all util fns
 [x] Add snapshots
 [x] Setup Cypress
-[ ] Write test for Cypress
-[ ] Setup loki
-[ ] Execute loki references
+[x] Write test for Cypress
+[x] Setup loki
+[x] Execute loki references
+[ ] Revise Readme
+[ ] Revise code and add comments
 [ ] Script publish
 [ ] Publish StoryBook
 [ ] Add GitHub link and description
