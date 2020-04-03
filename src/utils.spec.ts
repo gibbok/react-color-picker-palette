@@ -19,37 +19,21 @@ describe('utils', () => {
     });
   });
 
-  // describe('saveToClipboard', () => {
-  //   // navigator.clipboard = { writeText: jest.fn() };
-
-  //   jest
-  //     .spyOn(navigator.clipboard, 'writeText')
-  //     .mockImplementationOnce(() => new Promise<void>(x => `${x}-xxx`));
-
-  //   it('should save color to clipboard', () => {
-  //     saveToClipboard('#ffffff');
-  //     expect(navigator.clipboard.writeText).toBeCalled();
-  //   });
-  // });
   describe('saveToClipboard', () => {
+    const mockColor = '#ffffff';
     beforeAll(() => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const clipboard = (navigator as any).clipboard;
-      if (!(clipboard && clipboard.writeText && clipboard.readText)) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (navigator as any).clipboard = {
-          writeText: jest.fn(() => Promise.resolve()),
-          readText: jest.fn(() => Promise.resolve(JSON.stringify('xx')))
-        };
-      }
+      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      //@ts-ignore
+      navigator.clipboard = {
+        writeText: jest.fn(() => Promise.resolve()),
+        readText: jest.fn(() => Promise.resolve(mockColor))
+      };
     });
 
-    it('should save color to clipboard', () => {
-      saveToClipboard('#ffffff');
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      expect((navigator as any).clipboard.writeText).toBeCalledWith('#ffffff');
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      expect((navigator as any).clipboard.readText).toBeCalledWith('#ffffff');
+    it('should save color to clipboard', async () => {
+      saveToClipboard(mockColor);
+      expect(navigator.clipboard.writeText).toBeCalledWith(mockColor);
+      expect(await navigator.clipboard.readText()).toEqual(mockColor);
     });
   });
 });
