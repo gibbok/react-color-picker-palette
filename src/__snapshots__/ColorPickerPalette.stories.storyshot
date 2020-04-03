@@ -71,6 +71,7 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
     }
   >
     <canvas
+      data-cy="canvas"
       onClick={[Function]}
       style={
         Object {
@@ -103,9 +104,9 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
           }
         }
       >
-        <div>
-          transparent
-        </div>
+        <div
+          data-cy="result-hex"
+        />
       </div>
       <div
         style={
@@ -120,7 +121,9 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
           }
         }
       >
-        <div />
+        <div
+          data-cy="result-rgb"
+        />
       </div>
       <div
         style={
@@ -131,6 +134,7 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
         }
       >
         <div
+          data-cy="picked-color"
           onClick={[Function]}
           style={
             Object {
@@ -141,6 +145,7 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
           }
         />
         <div
+          data-cy="picked-prevColor"
           onClick={[Function]}
           style={
             Object {
@@ -177,9 +182,11 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
     }
   >
     <canvas
+      data-cy="canvas"
       onClick={[Function]}
       style={
         Object {
+          "border": "1px solid #dddddd",
           "height": 150,
           "margin": 0,
           "marginRight": 10,
@@ -210,9 +217,9 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
           }
         }
       >
-        <div>
-          transparent
-        </div>
+        <div
+          data-cy="result-hex"
+        />
       </div>
       <div
         style={
@@ -226,7 +233,9 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
           }
         }
       >
-        <div />
+        <div
+          data-cy="result-rgb"
+        />
       </div>
       <div
         style={
@@ -237,6 +246,7 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
         }
       >
         <div
+          data-cy="picked-color"
           onClick={[Function]}
           style={
             Object {
@@ -247,6 +257,7 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
           }
         />
         <div
+          data-cy="picked-prevColor"
           onClick={[Function]}
           style={
             Object {
@@ -282,9 +293,11 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
     }
   >
     <canvas
+      data-cy="canvas"
       onClick={[Function]}
       style={
         Object {
+          "border": "1px solid #dddddd",
           "height": 150,
           "margin": "0 10px 0 0",
           "padding": 0,
@@ -314,9 +327,9 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
           }
         }
       >
-        <div>
-          transparent
-        </div>
+        <div
+          data-cy="result-hex"
+        />
       </div>
       <div
         style={
@@ -330,7 +343,9 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
           }
         }
       >
-        <div />
+        <div
+          data-cy="result-rgb"
+        />
       </div>
       <div
         style={
@@ -341,6 +356,7 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
         }
       >
         <div
+          data-cy="picked-color"
           onClick={[Function]}
           style={
             Object {
@@ -351,6 +367,7 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
           }
         />
         <div
+          data-cy="picked-prevColor"
           onClick={[Function]}
           style={
             Object {
