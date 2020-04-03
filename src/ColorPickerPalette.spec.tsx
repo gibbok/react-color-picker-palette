@@ -29,29 +29,31 @@ describe('ColorPickerPalette', () => {
   });
 
   describe('should execute callbacks', () => {
-    it('should execute on canvas', () => {
+    it('does for canvas', () => {
       canvas.simulate('click');
-      expect(onSelectColorCB).toHaveBeenCalledWith({ hex: '#fffdfd', rgb: [255, 253, 253] });
-    });
-
-    it('should execute on prevColor', () => {
-      prevColorDiv.simulate('click');
       expect(onSelectColorCB).toHaveBeenCalled();
     });
 
-    it('should execute on color', () => {
+    it('does for color', () => {
       colorDiv.simulate('click');
+      expect(onSelectColorCB).toHaveBeenCalled();
+    });
+
+    it('does for prevColor', () => {
+      prevColorDiv.simulate('click');
       expect(onSelectColorCB).toHaveBeenCalled();
     });
   });
 
-  describe('should render color in results', () => {
-    it('should have transparent for result color', () => {
-      expect(colorDiv.get(0).props.style.backgroundColor).toBe('transparent');
+  describe('should render initial color for results', () => {
+    const initialColor = 'transparent';
+
+    it('renders for color', () => {
+      expect(colorDiv.get(0).props.style.backgroundColor).toBe(initialColor);
     });
 
-    it('should have transparent for result prevColor', () => {
-      expect(prevColorDiv.get(0).props.style.backgroundColor).toBe('transparent');
+    it('renders for prevColor', () => {
+      expect(prevColorDiv.get(0).props.style.backgroundColor).toBe(initialColor);
     });
   });
 });
