@@ -23,7 +23,10 @@ describe('ColorPickerPalette', () => {
 
   it('should render marker on palette', () => {
     cy.get(CANVAS).click();
-    cy.get(MARKER).should('exist');
+    cy.get(MARKER)
+      .should('exist')
+      .should('have.css', 'top', '84.5px')
+      .should('have.css', 'left', '159.5px');
   });
 
   it('should display hex and rgb colors in results', () => {
