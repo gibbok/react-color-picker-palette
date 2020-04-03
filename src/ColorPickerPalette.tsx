@@ -52,6 +52,7 @@ const ColorPickerPalette = ({
         ctx.fillRect(0, 0, ctx.canvas.width, canvas.height);
         gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
         gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        gradient.addColorStop(0.03, 'rgba(255, 255, 255, 1)');
         gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0)');
         gradient.addColorStop(0.5, 'rgba(0, 0, 0, 0)');
         gradient.addColorStop(1, 'rgba(0, 0, 0, 1)');
