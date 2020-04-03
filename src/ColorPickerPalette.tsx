@@ -1,5 +1,3 @@
-/*! ColorPickerPalette | The MIT License (MIT) | Copyright (c) 2020 GibboK */
-
 import * as React from 'react';
 import { defaultStyles, Styles, darkStyles } from './styles';
 import { rgbToHex, saveToClipboard } from './utils';
@@ -81,6 +79,7 @@ const ColorPickerPalette = ({
   };
 
   const setMarkerPos = (e: MouseEventCanvas) => {
+    /* istanbul ignore next */
     if (canvas && ctx && canvasRect) {
       setMarkerX(e.pageX - canvasRect.left / 2);
       setMarkerY(e.pageY - canvasRect.top / 2);
