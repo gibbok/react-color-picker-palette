@@ -10,6 +10,7 @@ type ComponentStructure =
 
 export type Styles = Record<ComponentStructure, React.CSSProperties>;
 
+export const MARKER_SIZE = 6;
 const border = '1px solid #dddddd';
 
 export const defaultStyles: Styles = {
@@ -33,10 +34,10 @@ export const defaultStyles: Styles = {
   },
   marker: {
     position: 'absolute',
-    width: 6,
-    height: 6,
+    width: MARKER_SIZE,
+    height: MARKER_SIZE,
     border: '1px solid #fff',
-    borderRadius: 6,
+    borderRadius: MARKER_SIZE,
     boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
   },
   results: {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { defaultStyles, Styles, darkStyles } from './styles';
+import { defaultStyles, Styles, darkStyles, MARKER_SIZE } from './styles';
 import { rgbToHex, saveToClipboard } from './utils';
 
 export type RGBColor = readonly [number, number, number];
@@ -15,6 +15,7 @@ export type ColorPickerPaletteProps = Readonly<{
 }>;
 
 const NO_COLOR = 'transparent';
+const MARKER_OFFSET = MARKER_SIZE / 2;
 
 const ColorPickerPalette = ({
   dark = false,
@@ -101,8 +102,8 @@ const ColorPickerPalette = ({
           data-cy="marker"
           style={{
             ...styles.marker,
-            top: markerY,
-            left: markerX
+            top: markerY + MARKER_OFFSET,
+            left: markerX + MARKER_OFFSET
           }}
         />
       )}
