@@ -28,7 +28,8 @@ export const defaultStyles: Styles = {
     margin: '0 10px 0 0',
     padding: 0,
     width: 300,
-    height: 150
+    height: 150,
+    border
   },
   marker: {
     position: 'absolute',
@@ -83,7 +84,8 @@ export const darkStyles: Styles = {
     padding: 0,
     width: 300,
     height: 150,
-    marginRight: 10
+    marginRight: 10,
+    border
   },
   marker: {
     position: 'absolute',
