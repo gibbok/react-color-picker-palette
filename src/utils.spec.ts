@@ -21,26 +21,30 @@ describe('utils', () => {
 
   describe('saveToClipboard', () => {
     const mockColor = '#ffffff';
+
+    const oldClipboard = navigator.clipboard;
+
     beforeAll(() => {
       Object.defineProperty(navigator, 'clipboard', {
         value: {
-          writeText: jest.fn((_s: string) => Promise.resolve())
+          writeText: jest.fn(() => Promise.resolve()),
+          readText: jest.fn(() => Promise.resolve(mockColor))
         },
         writable: true
       });
+    });
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-      //@ts-ignore
-      // navigator.clipboard = {
-      //   writeText: jest.fn(() => Promise.resolve()),
-      //   readText: jest.fn(() => Promise.resolve(mockColor))
-      // };
+    afterAll(() => {
+      Object.defineProperty(navigator, 'clipboard', {
+        value: oldClipboard
+      });
     });
 
     it('should save color to clipboard', async () => {
       saveToClipboard(mockColor);
       expect(navigator.clipboard.writeText).toHaveBeenCalled();
       expect(navigator.clipboard.writeText).toHaveBeenCalledWith(mockColor);
+      expect(await navigator.clipboard.readText()).toEqual(mockColor);
     });
   });
 });
