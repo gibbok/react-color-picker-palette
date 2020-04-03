@@ -7,16 +7,16 @@ module.exports = {
   setupFiles: ['<rootDir>./jest.setup.js'],
   collectCoverage: true,
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.{stories.tsx}', '!**/*.d.ts'],
-  coveragePathIgnorePatterns: ['/node_modules/'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/cypress/'],
   coverageDirectory: '<rootDir>/coverage',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx?)$',
-  testPathIgnorePatterns: [`node_modules`, `.cache`, `.lib`, `.+support.test.ts`],
+  testPathIgnorePatterns: [`node_modules`, `.cache`, `.lib`, `.+support.test.ts`, `/cypress/`],
   coverageThreshold: {
     global: {
-      statements: 92,
-      branches: 86,
-      lines: 91,
-      functions: 90
+      statements: 100,
+      branches: 79.31,
+      lines: 100,
+      functions: 100
     }
   }
 };
