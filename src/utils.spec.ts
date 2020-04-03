@@ -1,4 +1,5 @@
 import { rgbToHex, primaryToHex, saveToClipboard } from './utils';
+import { mockClipboard, restoreCliboard } from './support.test';
 
 describe('utils', () => {
   describe('primaryToHex', () => {
@@ -21,23 +22,14 @@ describe('utils', () => {
 
   describe('saveToClipboard', () => {
     const mockColor = '#ffffff';
-
     const oldClipboard = navigator.clipboard;
 
     beforeAll(() => {
-      Object.defineProperty(navigator, 'clipboard', {
-        value: {
-          writeText: jest.fn(() => Promise.resolve()),
-          readText: jest.fn(() => Promise.resolve(mockColor))
-        },
-        writable: true
-      });
+      mockClipboard(mockColor);
     });
 
     afterAll(() => {
-      Object.defineProperty(navigator, 'clipboard', {
-        value: oldClipboard
-      });
+      restoreCliboard(oldClipboard);
     });
 
     it('should write color to clipboard', async () => {
