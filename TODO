@@ -9,8 +9,11 @@
 [x] Example of customization
 [x] Setup Jest testing, add test for all util fns
 [x] Add snapshots
-[ ] Setup Cypress
+[x] Setup Cypress
 [ ] Write test for Cypress
+[ ] Setup loki
+[ ] Execute loki references
 [ ] Script publish
 [ ] Publish StoryBook
 [ ] Add GitHub link and description
+[ ] Think about adding a tutorial
