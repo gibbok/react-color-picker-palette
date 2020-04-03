@@ -9,6 +9,8 @@ module.exports = {
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.{stories.tsx}', '!**/*.d.ts'],
   coveragePathIgnorePatterns: ['/node_modules/'],
   coverageDirectory: '<rootDir>/coverage',
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx?)$',
+  testPathIgnorePatterns: [`node_modules`, `.cache`, `.lib`, `.+support.test.ts`],
   coverageThreshold: {
     global: {
       statements: 92,

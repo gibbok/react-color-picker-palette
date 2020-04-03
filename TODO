@@ -7,7 +7,7 @@
 [x] Styleable
 [x] Example of customization
 [x] Setup Jest testing, add test for all util fns
-[ ] Add snapshots
+[x] Add snapshots
 [ ] Script publish
 [ ] Publish StoryBook
 [x] Add dark theme
