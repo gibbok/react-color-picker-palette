@@ -12,5 +12,5 @@ export const saveToClipboard = (value: string): Promise<void | {}> =>
   navigator.clipboard.writeText(value).then(
     () => ({}),
     /* istanbul ignore next */
-    e => console.warn(`Unable to copy: ${e}`)
+    (e) => console.warn(`Unable to copy: ${e}`)
   );

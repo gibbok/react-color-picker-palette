@@ -15,7 +15,7 @@ describe('ColorPickerPalette', () => {
     restoreCliboard(oldClipboard);
   });
 
-  const onSelectColorCB = jest.fn(x => x);
+  const onSelectColorCB = jest.fn((x) => x);
   const wrapper = mount(<ColorPickerPalette onSelectColor={onSelectColorCB} />);
   const canvas = wrapper.find('canvas');
   const divs = wrapper.find('div > div');

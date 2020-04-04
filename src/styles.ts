@@ -23,14 +23,14 @@ export const defaultStyles: Styles = {
     padding: 10,
     border,
     boxShadow: 'rgba(0, 0, 0, 0.10) 2px 2px 4px 1px',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
   },
   canvas: {
     margin: '0 10px 0 0',
     padding: 0,
     width: 300,
     height: 150,
-    border
+    border,
   },
   marker: {
     position: 'absolute',
@@ -38,13 +38,13 @@ export const defaultStyles: Styles = {
     height: MARKER_SIZE,
     border: '1px solid #fff',
     borderRadius: MARKER_SIZE,
-    boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
+    boxShadow: '0 0 0 1px rgba(0,0,0,0.75)',
   },
   results: {
     display: 'flex',
     width: '100%',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   result: {
     display: 'flex',
@@ -52,20 +52,20 @@ export const defaultStyles: Styles = {
     alignItems: 'center',
     width: '100%',
     height: 30,
-    border
+    border,
   },
   colors: {
     display: 'flex',
-    border
+    border,
   },
   color: {
     width: 55,
-    height: 55
+    height: 55,
   },
   prevColor: {
     width: 55,
-    height: 55
-  }
+    height: 55,
+  },
 };
 
 export const darkStyles: Styles = {
@@ -78,7 +78,7 @@ export const darkStyles: Styles = {
     padding: 10,
     border,
     boxShadow: 'rgba(0, 0, 0, 0.10) 2px 2px 4px 1px',
-    backgroundColor: '#1a1a1a'
+    backgroundColor: '#1a1a1a',
   },
   canvas: {
     margin: 0,
@@ -86,7 +86,7 @@ export const darkStyles: Styles = {
     width: 300,
     height: 150,
     marginRight: 10,
-    border
+    border,
   },
   marker: {
     position: 'absolute',
@@ -94,13 +94,13 @@ export const darkStyles: Styles = {
     height: 6,
     border: '1px solid #fff',
     borderRadius: 6,
-    boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
+    boxShadow: '0 0 0 1px rgba(0,0,0,0.75)',
   },
   results: {
     display: 'flex',
     width: '100%',
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   result: {
     display: 'flex',
@@ -108,18 +108,18 @@ export const darkStyles: Styles = {
     alignItems: 'center',
     width: '100%',
     height: 30,
-    border
+    border,
   },
   colors: {
     display: 'flex',
-    border
+    border,
   },
   color: {
     width: 55,
-    height: 55
+    height: 55,
   },
   prevColor: {
     width: 55,
-    height: 55
-  }
+    height: 55,
+  },
 };

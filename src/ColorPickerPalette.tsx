@@ -20,7 +20,7 @@ const MARKER_OFFSET = MARKER_SIZE / 2;
 const ColorPickerPalette = ({
   dark = false,
   styles = dark ? darkStyles : defaultStyles,
-  onSelectColor
+  onSelectColor,
 }: ColorPickerPaletteProps) => {
   const [color, setColor] = React.useState<string>(NO_COLOR);
   const [colorRGB, setColorRGB] = React.useState<RGBColor | null>();
@@ -93,7 +93,7 @@ const ColorPickerPalette = ({
         data-cy="canvas"
         style={{ ...styles.canvas }}
         ref={canvasRef}
-        onClick={e => {
+        onClick={(e) => {
           selectColor(e);
           setMarkerPos(e);
         }}
@@ -104,7 +104,7 @@ const ColorPickerPalette = ({
           style={{
             ...styles.marker,
             top: markerY + MARKER_OFFSET,
-            left: markerX + MARKER_OFFSET
+            left: markerX + MARKER_OFFSET,
           }}
         />
       )}

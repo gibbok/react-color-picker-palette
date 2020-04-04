@@ -21,5 +21,5 @@ initStoryshots({
         throw new Error(error.message);
       }
     }
-  }
+  },
 });

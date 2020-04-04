@@ -18,13 +18,13 @@ storiesOf('ColorPickerPalette', module)
           width: 400,
           padding: 10,
           border: '1px solid #dddddd',
-          backgroundColor: '#f5f5dc'
+          backgroundColor: '#f5f5dc',
         },
         canvas: {
           padding: 0,
           width: 400,
           height: 250,
-          margin: '0 10px 10px 0'
+          margin: '0 10px 10px 0',
         },
         marker: {
           position: 'absolute',
@@ -32,12 +32,12 @@ storiesOf('ColorPickerPalette', module)
           height: 6,
           border: '1px solid #fff',
           borderRadius: 6,
-          boxShadow: '0 0 0 1px rgba(0,0,0,0.75)'
+          boxShadow: '0 0 0 1px rgba(0,0,0,0.75)',
         },
         results: {
           display: 'flex',
           width: '100%',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         },
         result: {
           display: 'flex',
@@ -46,20 +46,20 @@ storiesOf('ColorPickerPalette', module)
           width: '100%',
           height: 60,
           border: '1px solid #dddddd',
-          marginRight: 10
+          marginRight: 10,
         },
         colors: {
           display: 'flex',
-          border: '1px solid #dddddd'
+          border: '1px solid #dddddd',
         },
         color: {
           width: 60,
-          height: 60
+          height: 60,
         },
         prevColor: {
           width: 60,
-          height: 60
-        }
+          height: 60,
+        },
       }}
       onSelectColor={onSelectColor}
     />
