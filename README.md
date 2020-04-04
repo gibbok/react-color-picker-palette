@@ -2,7 +2,7 @@
 
 ColorPickerPalette is a React reusable color picker palette written in TypeScript.
 
-Live here: <https://gibbok.github.io/react-color-picker-palette/>
+Live demo here: <https://gibbok.github.io/react-color-picker-palette/>
 
 ## Key features
 
@@ -19,7 +19,9 @@ Live here: <https://gibbok.github.io/react-color-picker-palette/>
 
 ### Installation
 
-- In your terminal navigate to you `package.json` file and run `npm i react-color-picker-palette`.
+In your terminal navigate to you `package.json` file and run:
+
+`npm i react-color-picker-palette`.
 
 ### Documentation and examples
 
@@ -80,6 +82,6 @@ Script descriptions:
 
 ### Support
 
-Please report any [issue](https://github.com/gibbok/react-color-picker-palette/issues)
+Please report any [issues](https://github.com/gibbok/react-color-picker-palette/issues)
 
 For updates follow me on [Twitter](https://twitter.com/gibbok_coding) or [Stack Overflow](https://stackoverflow.com/users/379008/gibbok)
