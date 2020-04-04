@@ -13,7 +13,7 @@
     "color picker palette"
   ],
   "scripts": {
-    "clean": "rimraf ./lib ./coverage",
+    "clean": "rimraf ./lib ./coverage ./out",
     "tsc": "tsc",
     "tsc:watch": "tsc --watch --pretty",
     "build": "tsc -p ./tsconfig.prod.json",
