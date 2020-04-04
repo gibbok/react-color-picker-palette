@@ -36,13 +36,19 @@ Script descriptions:
 
 `npm i` install all dependencies for the project
 
+`npm run clean` cleanup project output
+
+`npm run check` execute all tests including visual regressions
+
+`npm run check:ci` execute all test but no visual regressions
+
 `npm run tsc` perform a TypeScript validation
 
 `npm run tsc:watch` watch files and continuously perform TypeScript validation
 
 `npm run build` build project
 
-`npm run build` watch files and continuously build
+`npm run build:watch` watch files and continuously build
 
 `npm run build:prod` make build for production including all validations
 
@@ -68,7 +74,9 @@ Script descriptions:
 
 `npm run loki:approve` approve difference found during visual regression
 
-`npm run cypress` execute end to end testing
+`npm run cypress` execute end to end testing in the browser
+
+`npm run cypress:headless` execute end to end testing in headless mode
 
 ### Support
 

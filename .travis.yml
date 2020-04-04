@@ -16,5 +16,5 @@ cache:
 install:
   - npm ci
 script:
+  - npm run check:ci
   - npm run storybook:deploy
-  - $(npm bin)/cypress run --record
