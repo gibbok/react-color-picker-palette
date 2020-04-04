@@ -54,6 +54,8 @@ Script descriptions:
 
 `npm run storybook:build:local` locally preview build for StoryBook
 
+`npm run storybook:deploy` deploy build StoryBook on GitHub pages
+
 `npm test` execute tests
 
 `npm test:no-coverage` execute tests but do not create a coverage report
