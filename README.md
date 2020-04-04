@@ -27,7 +27,7 @@ Documentation and examples are visible in StoryBook, to run it just execute `npm
 
 ### Styles and customization
 
-ColorPickerPalette comes with two elegant light and dark theme, but you can build your theme for the entire component using CSS.
+ColorPickerPalette comes with two elegant light and dark themes, but you can build your theme for the entire component using CSS.
 The default themes and examples of customization are visible in StoryBook.
 
 ### Developement
@@ -69,3 +69,9 @@ Script descriptions:
 `npm run loki:approve` approve difference found during visual regression
 
 `npm run cypress` execute end to end testing
+
+### Support
+
+Please report any [issue](https://github.com/gibbok/react-color-picker-palette/issues)
+
+For updates follow me on [Twitter](https://twitter.com/gibbok_coding) or [Stack Overflow](https://stackoverflow.com/users/379008/gibbok)
