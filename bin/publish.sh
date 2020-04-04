@@ -6,6 +6,7 @@
 PROJECT_DIR="../"
 NODE_MODULES_DIR="node_modules"
 NVM_DIR="$HOME/.nvm"
+cd $PROJECT_DIR
 PACKAGE_VERSION=$(jq -r .version package.json)
 PACKAGE_NAME=$(jq -r .name package.json)
 
@@ -45,7 +46,6 @@ fi
 
 # Remove node_module dependencies
 echo "Cleaning..."
-cd $PROJECT_DIR
 if [ -d $NODE_MODULES_DIR ]; then
     echo "Deleting node_modules..."
     if rm -rf $NODE_MODULES_DIR; then
