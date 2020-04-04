@@ -15,8 +15,8 @@
 [x] Execute loki references
 [x] Add CI include cypress on headless
 [x] Revise Readme
-[ ] Revise code and add comments
-[ ] Script publish / npm ignore folder
+[x] Revise code and add comments
+[x] Script publish / npm ignore folder
 [ ] Publish StoryBook
 [ ] Add GitHub link and description
 [ ] Think about adding a tutorial

@@ -1,4 +1,4 @@
-type ComponentStructure =
+export type ComponentStructure =
   | 'colorPicker'
   | 'canvas'
   | 'marker'

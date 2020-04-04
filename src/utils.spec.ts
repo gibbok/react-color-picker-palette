@@ -37,7 +37,7 @@ describe('utils', () => {
       expect(navigator.clipboard.writeText).toHaveBeenCalledWith(mockColor);
     });
 
-    it('should read color to clipboard', async () => {
+    it('should read color from clipboard', async () => {
       saveToClipboard(mockColor);
       expect(await navigator.clipboard.readText()).toEqual(mockColor);
     });
