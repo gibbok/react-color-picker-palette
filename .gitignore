@@ -2,6 +2,7 @@
 dist
 lib
 .out
+package
 
 # Logs
 logs

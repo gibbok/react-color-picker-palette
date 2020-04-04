@@ -16,3 +16,9 @@ jest.setup.js
 src/__tests__
 cypress
 .out
+package
+*.tgz
+webpack.config.js
+.prettierrc.js
+.eslintrc.js
+.editorconfig
