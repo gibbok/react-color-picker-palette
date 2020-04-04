@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots ColorPickerPalette custom 1`] = `
+<ColorPickerPalette
+  onSelectColor={[Function]}
+  styles={
+    Object {
+      "canvas": Object {
+        "height": 250,
+        "margin": "0 10px 10px 0",
+        "padding": 0,
+        "width": 400,
+      },
+      "color": Object {
+        "height": 60,
+        "width": 60,
+      },
+      "colorPicker": Object {
+        "backgroundColor": "#f5f5dc",
+        "border": "1px solid #dddddd",
+        "color": "#585858",
+        "fontFamily": "Arial,Helvetica,sans-serif",
+        "fontSize": 14,
+        "padding": 10,
+        "width": 400,
+      },
+      "colors": Object {
+        "border": "1px solid #dddddd",
+        "display": "flex",
+      },
+      "marker": Object {
+        "border": "1px solid #fff",
+        "borderRadius": 6,
+        "boxShadow": "0 0 0 1px rgba(0,0,0,0.75)",
+        "height": 6,
+        "position": "absolute",
+        "width": 6,
+      },
+      "prevColor": Object {
+        "height": 60,
+        "width": 60,
+      },
+      "result": Object {
+        "alignItems": "center",
+        "border": "1px solid #dddddd",
+        "display": "flex",
+        "height": 60,
+        "justifyContent": "center",
+        "marginRight": 10,
+        "width": "100%",
+      },
+      "results": Object {
+        "display": "flex",
+        "justifyContent": "space-between",
+        "width": "100%",
+      },
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#f5f5dc",
+        "border": "1px solid #dddddd",
+        "color": "#585858",
+        "fontFamily": "Arial,Helvetica,sans-serif",
+        "fontSize": 14,
+        "padding": 10,
+        "width": 400,
+      }
+    }
+  >
+    <canvas
+      data-cy="canvas"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": 250,
+          "margin": "0 10px 10px 0",
+          "padding": 0,
+          "width": 400,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "space-between",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "1px solid #dddddd",
+            "display": "flex",
+            "height": 60,
+            "justifyContent": "center",
+            "marginRight": 10,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          data-cy="result-hex"
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "1px solid #dddddd",
+            "display": "flex",
+            "height": 60,
+            "justifyContent": "center",
+            "marginRight": 10,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          data-cy="result-rgb"
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px solid #dddddd",
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          data-cy="picked-color"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 60,
+              "width": 60,
+            }
+          }
+        />
+        <div
+          data-cy="picked-prevColor"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 60,
+              "width": 60,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</ColorPickerPalette>
+`;
+
+exports[`Storyshots ColorPickerPalette dark 1`] = `
+<ColorPickerPalette
+  dark={true}
+  onSelectColor={[Function]}
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#1a1a1a",
+        "border": "1px solid #dddddd",
+        "boxShadow": "rgba(0, 0, 0, 0.10) 2px 2px 4px 1px",
+        "color": "#ffffff",
+        "display": "flex",
+        "fontFamily": "Arial,Helvetica,sans-serif",
+        "fontSize": 12,
+        "padding": 10,
+        "width": 420,
+      }
+    }
+  >
+    <canvas
+      data-cy="canvas"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "1px solid #dddddd",
+          "height": 150,
+          "margin": 0,
+          "marginRight": 10,
+          "padding": 0,
+          "width": 300,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "1px solid #dddddd",
+            "display": "flex",
+            "height": 30,
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          data-cy="result-hex"
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "1px solid #dddddd",
+            "display": "flex",
+            "height": 30,
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          data-cy="result-rgb"
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px solid #dddddd",
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          data-cy="picked-color"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 55,
+              "width": 55,
+            }
+          }
+        />
+        <div
+          data-cy="picked-prevColor"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 55,
+              "width": 55,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</ColorPickerPalette>
+`;
+
+exports[`Storyshots ColorPickerPalette light 1`] = `
+<ColorPickerPalette
+  onSelectColor={[Function]}
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "border": "1px solid #dddddd",
+        "boxShadow": "rgba(0, 0, 0, 0.10) 2px 2px 4px 1px",
+        "color": "#585858",
+        "display": "flex",
+        "fontFamily": "Arial,Helvetica,sans-serif",
+        "fontSize": 12,
+        "padding": 10,
+        "width": 420,
+      }
+    }
+  >
+    <canvas
+      data-cy="canvas"
+      onClick={[Function]}
+      style={
+        Object {
+          "border": "1px solid #dddddd",
+          "height": 150,
+          "margin": "0 10px 0 0",
+          "padding": 0,
+          "width": 300,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "1px solid #dddddd",
+            "display": "flex",
+            "height": 30,
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          data-cy="result-hex"
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "border": "1px solid #dddddd",
+            "display": "flex",
+            "height": 30,
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          data-cy="result-rgb"
+        />
+      </div>
+      <div
+        style={
+          Object {
+            "border": "1px solid #dddddd",
+            "display": "flex",
+          }
+        }
+      >
+        <div
+          data-cy="picked-color"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 55,
+              "width": 55,
+            }
+          }
+        />
+        <div
+          data-cy="picked-prevColor"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 55,
+              "width": 55,
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</ColorPickerPalette>
+`;

@@ -1,28 +1,27 @@
-﻿var config = {
-    entry: './examples/main.js',
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
 
-    output: {
-        path: './examples',
-        filename: 'index.js',
-    },
-
-    devServer: {
-        inline: true,
-        port: 8080
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel',
-
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
-        ]
-    }
-}
-
-module.exports = config;
+module.exports = {
+  entry: './src/index.ts',
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js']
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'lib')
+  }
+};

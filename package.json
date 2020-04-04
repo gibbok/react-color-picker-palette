@@ -1,10 +1,11 @@
 {
   "name": "react-color-picker-palette",
-  "version": "1.1.2",
-  "description": "ColorPickerPalette is a React reusable color picker palette written in ES6.",
-  "main": "ColorPickerPalette.jsx",
+  "version": "2.0.0",
+  "description": "ColorPickerPalette is a React reusable color picker palette written in TypeScript.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "keywords": [
-    "javascript",
+    "typescript",
     "react",
     "color",
     "picker",
@@ -12,36 +13,101 @@
     "color picker",
     "color picker palette"
   ],
+  "scripts": {
+    "clean": "rimraf ./lib ./coverage ./out",
+    "check": "npm run clean && npm run lint && npm run tsc && npm run test && npm run loki && npm run cypress:headless",
+    "check:ci": "npm run clean && npm run lint && npm run tsc && npm run test",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch --pretty",
+    "build": "tsc -p ./tsconfig.prod.json",
+    "build:watch": "npm run build -- --watch --pretty",
+    "build:prod": "npm run build && cp -r src/assets lib/",
+    "lint": "tsc & eslint './src/**/*.{js,ts,tsx}' & prettier './src/**/*.{js,ts,tsx}' --check",
+    "lint:fix": "tsc & eslint './src/**/*.{js,ts,tsx}' --fix & prettier './src/**/*.{js,ts,tsx}' --write",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook -c .storybook -o .out",
+    "storybook:build:local": "npx http-server .out",
+    "storybook:deploy": "npm run check && npm run storybook:build && storybook-to-ghpages",
+    "test": "TZ=UTC jest",
+    "test:no-coverage": "TZ=UTC jest --coverage=false",
+    "test:watch": "TZ=UTC jest --coverage=false --watch",
+    "loki": "loki test --port 6006",
+    "loki:approve": "loki approve",
+    "cypress": "cypress open",
+    "cypress:headless": "$(npm bin)/cypress run"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gibbok/react-color-picker-palette.git"
   },
   "author": "GibboK",
   "license": "MIT",
-  "scripts": {
-    "start": "webpack-dev-server --hot"
+  "bugs": {
+    "url": "https://github.com/gibbok/react-color-picker-palette/issues"
   },
+  "homepage": "https://github.com/gibbok/react-color-picker-palette#readme",
   "dependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.9.1",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "gulp": "^3.9.1",
-    "gulp-jscs": "4.0.0",
-    "gulp-jshint": "^2.0.1",
-    "gulp-util": "^3.0.7",
-    "gulp-jscs-stylish": "^1.3.0",
-    "jshint-stylish": "^2.1.0",
-    "open": "^0.0.5",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "react-dom": "^16.12.0",
+    "react": "^16.12.0",
+    "typescript": "^3.7.5"
   },
   "devDependencies": {
-    "gulp-jshint": "^2.0.1",
-    "jshint": "^2.9.2"
+    "@babel/core": "^7.8.3",
+    "@bahmutov/add-typescript-to-cypress": "^2.1.2",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addon-storyshots": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "@storybook/storybook-deployer": "^2.8.5",
+    "@storybook/theming": "^5.3.18",
+    "@types/classnames": "^2.2.9",
+    "@types/enzyme": "^3.10.5",
+    "@types/events": "^3.0.0",
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "canvas": "^2.6.1",
+    "css-loader": "^3.4.2",
+    "csstype": "^2.6.10",
+    "cypress": "^4.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.2.7",
+    "loki": "^0.20.1",
+    "prettier": "^2.0.2",
+    "react-docgen-typescript-loader": "^3.7.2",
+    "rimraf": "^3.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
+    "ts-jest": "^25.3.1",
+    "ts-loader": "^6.2.1",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      }
+    }
   }
 }
