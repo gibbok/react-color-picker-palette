@@ -21,7 +21,7 @@ Live demo here: <https://gibbok.github.io/react-color-picker-palette/>
 
 In your terminal navigate to you `package.json` file and run:
 
-`npm i react-color-picker-palette`.
+`npm i react-color-picker-palette`
 
 ### Documentation and examples
 
