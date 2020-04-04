@@ -17,6 +17,7 @@
 [x] Revise Readme
 [x] Revise code and add comments
 [x] Script publish / npm ignore folder
-[ ] Publish StoryBook
-[ ] Add GitHub link and description
+[x] Publish StoryBook
+[x] Add GitHub link and description
+[ ] Integrate CI include publish StoryBook
 [ ] Think about adding a tutorial
