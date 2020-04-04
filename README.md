@@ -52,7 +52,7 @@ Script descriptions:
 
 `npm run build:watch` watch files and continuously build
 
-`npm run build:prod` make build for production including all validations
+`npm run build:prod` make build for production executing all validations
 
 `npm run lint` perform lint validation
 
@@ -82,6 +82,6 @@ Script descriptions:
 
 ### Support
 
-Please report any [issues](https://github.com/gibbok/react-color-picker-palette/issues)
+Please report any [issues](https://github.com/gibbok/react-color-picker-palette/issues).
 
-For updates follow me on [Twitter](https://twitter.com/gibbok_coding) or [Stack Overflow](https://stackoverflow.com/users/379008/gibbok)
+For updates follow me on [Twitter](https://twitter.com/gibbok_coding) or [Stack Overflow](https://stackoverflow.com/users/379008/gibbok).
