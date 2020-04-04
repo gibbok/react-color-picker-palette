@@ -62,4 +62,4 @@ Script descriptions:
 
 `npm run loki:approve` approve difference found during visual regression
 
-`npm run cypress:open` execute end to end testing
+`npm run cypress` execute end to end testing

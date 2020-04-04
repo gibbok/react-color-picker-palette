@@ -1,6 +1,5 @@
 *.json
 yarn.lock
-src
 coverage
 .prettierrc.json
 .travis.yml
@@ -15,3 +14,4 @@ jest.setup.js
 .loki
 .storybook
 src/__tests__
+cypress

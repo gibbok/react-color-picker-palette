@@ -28,7 +28,7 @@
     "test:watch": "TZ=UTC jest --coverage=false --watch",
     "loki": "loki test --port 6006",
     "loki:approve": "loki approve",
-    "cypress:open": "cypress open"
+    "cypress": "cypress open"
   },
   "repository": {
     "type": "git",
