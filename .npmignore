@@ -15,3 +15,4 @@ jest.setup.js
 .storybook
 src/__tests__
 cypress
+.out

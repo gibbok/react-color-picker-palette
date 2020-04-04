@@ -50,7 +50,9 @@ Script descriptions:
 
 `npm run storybook` run and open StoryBook at <http://localhost:6006/>
 
-`storybook:build` make build for StoryBook
+`npm run storybook:build` make build for StoryBook
+
+`npm run storybook:build:local` locally preview build for StoryBook
 
 `npm test` execute tests
 
