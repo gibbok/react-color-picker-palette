@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import ColorPickerPalette from './ColorPickerPalette';
+import { ColorPickerPalette } from './ColorPickerPalette';
 import { mockClipboard, restoreCliboard } from './support.test';
 
 describe('ColorPickerPalette', () => {

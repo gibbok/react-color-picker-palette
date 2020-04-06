@@ -17,7 +17,7 @@ export type ColorPickerPaletteProps = Readonly<{
 const NO_COLOR = 'transparent';
 const MARKER_OFFSET = MARKER_SIZE / 2;
 
-const ColorPickerPalette = ({
+export const ColorPickerPalette = ({ 
   dark = false,
   styles = dark ? darkStyles : defaultStyles,
   onSelectColor,
@@ -133,5 +133,3 @@ const ColorPickerPalette = ({
     </div>
   );
 };
-
-export default ColorPickerPalette;

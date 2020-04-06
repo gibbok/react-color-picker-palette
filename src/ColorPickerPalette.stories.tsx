@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import * as React from 'react';
-import ColorPickerPalette from './ColorPickerPalette';
+import { ColorPickerPalette } from './ColorPickerPalette';
 
 const onSelectColor = action('onSelectorColor');
 
