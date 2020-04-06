@@ -19,11 +19,12 @@ export const defaultStyles: Styles = {
     fontFamily: 'Arial,Helvetica,sans-serif',
     fontSize: 12,
     color: '#585858',
-    width: 420,
+    width: 450,
     padding: 10,
     border,
     boxShadow: 'rgba(0, 0, 0, 0.10) 2px 2px 4px 1px',
     backgroundColor: '#ffffff',
+    boxSizing: 'border-box',
   },
   canvas: {
     margin: '0 10px 0 0',
@@ -59,11 +60,11 @@ export const defaultStyles: Styles = {
     border,
   },
   color: {
-    width: 55,
+    width: '50%',
     height: 55,
   },
   prevColor: {
-    width: 55,
+    width: '50%',
     height: 55,
   },
 };
@@ -74,11 +75,12 @@ export const darkStyles: Styles = {
     fontFamily: 'Arial,Helvetica,sans-serif',
     fontSize: 12,
     color: '#ffffff',
-    width: 420,
+    width: 450,
     padding: 10,
     border,
     boxShadow: 'rgba(0, 0, 0, 0.10) 2px 2px 4px 1px',
     backgroundColor: '#1a1a1a',
+    boxSizing: 'border-box',
   },
   canvas: {
     margin: 0,
@@ -115,11 +117,11 @@ export const darkStyles: Styles = {
     border,
   },
   color: {
-    width: 55,
+    width: '50%',
     height: 55,
   },
   prevColor: {
-    width: 55,
+    width: '50%',
     height: 55,
   },
 };
