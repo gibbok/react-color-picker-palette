@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Storyshots ColorPickerPalette custom 1`] = `
-<ColorPickerPalette
+<Component
   onSelectColor={[Function]}
   styles={
     Object {
@@ -158,11 +158,11 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
       </div>
     </div>
   </div>
-</ColorPickerPalette>
+</Component>
 `;
 
 exports[`Storyshots ColorPickerPalette dark 1`] = `
-<ColorPickerPalette
+<Component
   dark={true}
   onSelectColor={[Function]}
 >
@@ -172,12 +172,13 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
         "backgroundColor": "#1a1a1a",
         "border": "1px solid #dddddd",
         "boxShadow": "rgba(0, 0, 0, 0.10) 2px 2px 4px 1px",
+        "boxSizing": "border-box",
         "color": "#ffffff",
         "display": "flex",
         "fontFamily": "Arial,Helvetica,sans-serif",
         "fontSize": 12,
         "padding": 10,
-        "width": 420,
+        "width": 450,
       }
     }
   >
@@ -252,7 +253,7 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
             Object {
               "backgroundColor": "transparent",
               "height": 55,
-              "width": 55,
+              "width": "50%",
             }
           }
         />
@@ -263,18 +264,18 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
             Object {
               "backgroundColor": "transparent",
               "height": 55,
-              "width": 55,
+              "width": "50%",
             }
           }
         />
       </div>
     </div>
   </div>
-</ColorPickerPalette>
+</Component>
 `;
 
 exports[`Storyshots ColorPickerPalette light 1`] = `
-<ColorPickerPalette
+<Component
   onSelectColor={[Function]}
 >
   <div
@@ -283,12 +284,13 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
         "backgroundColor": "#ffffff",
         "border": "1px solid #dddddd",
         "boxShadow": "rgba(0, 0, 0, 0.10) 2px 2px 4px 1px",
+        "boxSizing": "border-box",
         "color": "#585858",
         "display": "flex",
         "fontFamily": "Arial,Helvetica,sans-serif",
         "fontSize": 12,
         "padding": 10,
-        "width": 420,
+        "width": 450,
       }
     }
   >
@@ -362,7 +364,7 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
             Object {
               "backgroundColor": "transparent",
               "height": 55,
-              "width": 55,
+              "width": "50%",
             }
           }
         />
@@ -373,12 +375,12 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
             Object {
               "backgroundColor": "transparent",
               "height": 55,
-              "width": 55,
+              "width": "50%",
             }
           }
         />
       </div>
     </div>
   </div>
-</ColorPickerPalette>
+</Component>
 `;
