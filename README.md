@@ -36,6 +36,8 @@ The default themes and examples of customization are visible in StoryBook.
 
 Script descriptions:
 
+`nvm use` switch to the right version of Node.js for this project
+
 `npm i` install all dependencies for the project
 
 `npm run clean` cleanup project output
