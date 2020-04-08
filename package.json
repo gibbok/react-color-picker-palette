@@ -27,7 +27,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -c .storybook -o .out",
     "storybook:build:local": "npx http-server .out",
-    "storybook:deploy": "npm run check:ci && npm run storybook:build && storybook-to-ghpages",
+    "storybook:deploy": "npm run check && npm run storybook:build && storybook-to-ghpages",
     "test": "TZ=UTC jest",
     "test:no-coverage": "TZ=UTC jest --coverage=false",
     "test:watch": "TZ=UTC jest --coverage=false --watch",
