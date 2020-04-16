@@ -17,10 +17,9 @@ describe('ColorPickerPalette', () => {
 
   const onSelectColorCB = jest.fn((x) => x);
   const wrapper = mount(<ColorPickerPalette onSelectColor={onSelectColorCB} />);
-  const canvas = wrapper.find('canvas');
-  const divs = wrapper.find('div > div');
-  const colorDiv = divs.at(7);
-  const prevColorDiv = divs.at(6);
+  const canvas = wrapper.find('[data-cy="canvas"]');
+  const colorDiv = wrapper.find('[data-cy="picked-color"]');
+  const prevColorDiv = wrapper.find('[data-cy="picked-prevColor"]');
 
   describe('should render main components', () => {
     expect(canvas).toHaveLength(1);
