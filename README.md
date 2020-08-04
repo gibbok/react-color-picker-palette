@@ -19,7 +19,7 @@ Live demo here: <https://gibbok.github.io/react-color-picker-palette/>
 
 ### Installation
 
-In your terminal navigate to you `package.json` file and run:
+This package is [available on npm](https://www.npmjs.com/package/react-color-picker-palette), to install it, use your terminal and navigate to you `package.json` file and run:
 
 `npm i react-color-picker-palette`
 

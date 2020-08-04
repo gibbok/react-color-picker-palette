@@ -92,6 +92,8 @@ export const ColorPickerPalette = ({
       <canvas
         data-cy="canvas"
         style={{ ...styles.canvas }}
+        width={styles.canvas.width}
+        height={styles.canvas.height}
         ref={canvasRef}
         onClick={(e) => {
           selectColor(e);
