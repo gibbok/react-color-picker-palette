@@ -72,6 +72,7 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
   >
     <canvas
       data-cy="canvas"
+      height={250}
       onClick={[Function]}
       style={
         Object {
@@ -81,6 +82,7 @@ exports[`Storyshots ColorPickerPalette custom 1`] = `
           "width": 400,
         }
       }
+      width={400}
     />
     <div
       style={
@@ -184,6 +186,7 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
   >
     <canvas
       data-cy="canvas"
+      height={150}
       onClick={[Function]}
       style={
         Object {
@@ -195,6 +198,7 @@ exports[`Storyshots ColorPickerPalette dark 1`] = `
           "width": 300,
         }
       }
+      width={300}
     />
     <div
       style={
@@ -296,6 +300,7 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
   >
     <canvas
       data-cy="canvas"
+      height={150}
       onClick={[Function]}
       style={
         Object {
@@ -306,6 +311,7 @@ exports[`Storyshots ColorPickerPalette light 1`] = `
           "width": 300,
         }
       }
+      width={300}
     />
     <div
       style={
