@@ -39,6 +39,8 @@ export const ColorPickerPalette = ({
     if (canvas) {
       ctx = canvas.getContext('2d');
       canvasRect = canvas.getBoundingClientRect();
+      canvas.width = canvasRect.width;
+      canvas.height = canvasRect.height;
       if (ctx && canvasRect) {
         let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
         gradient.addColorStop(0, 'rgb(255, 0, 0)');
